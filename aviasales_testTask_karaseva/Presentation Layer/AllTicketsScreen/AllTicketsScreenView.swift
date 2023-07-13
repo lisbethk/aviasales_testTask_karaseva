@@ -47,7 +47,7 @@ struct AllTicketsScreenView: View {
                                     Text("\(item.origin) — \(item.destination)")
                                         .font(.headline
                                             .weight(.semibold))
-                                    Text("\(item.departureDate)")
+                                    Text("\(item.departureDate), \(item.passengersCount)")
                                         .font(.caption)
                                         .foregroundColor(.gray)
                                 }

@@ -7,18 +7,6 @@
 
 import Foundation
 
-private struct Currency {
-    var currencyName: String
-    var currencySymbol: String {
-        switch currencyName {
-        case "RUB" :
-            return "₽"
-        default:
-            return "No data"
-        }
-    }
-}
-
 protocol PriceFormatterServiceProtocol {
     func getFormattedPrice(price: String, currency: String) -> String
 }
@@ -36,8 +24,19 @@ final class PriceFormatterService: PriceFormatterServiceProtocol {
             substrings.append(substring)
             currentIndex -= 3
         }
-        let price = substrings.joined(separator:" ") + " " + Currency(currencyName: currency).currencySymbol
+        guard let currencySymbol = getSymbol(forCurrencyCode: currency) else { return "" }
+        let price = substrings.joined(separator:" ") + " " + currencySymbol
         return price
     }
+
+    func getSymbol(forCurrencyCode code: String) -> String? {
+        let locale = NSLocale(localeIdentifier: code)
+        if locale.displayName(forKey: .currencySymbol, value: code) == code {
+            let newlocale = NSLocale(localeIdentifier: code.dropLast() + "_en")
+            return newlocale.displayName(forKey: .currencySymbol, value: code)
+        }
+        return locale.displayName(forKey: .currencySymbol, value: code)
+    }
+
 }
 

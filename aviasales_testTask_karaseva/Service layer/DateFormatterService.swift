@@ -7,38 +7,24 @@
 
 import Foundation
 
-private struct Month {
-    var numberOfMonth: String
-    var monthName: String {
-        switch numberOfMonth {
-        case "9" :
-            return "сен"
-        default:
-            return "No data"
-        }
-    }
-}
-
 protocol DateFormatterServiceProtocol {
-    func getFormattedDate(date: String) -> String
-    func getFormattedTime(date: String) -> String
+    func monthAndDay(from date: Date) -> String
+    func hoursAndMinutes(from date: Date) -> String
 }
 
 final class DateFormatterService: DateFormatterServiceProtocol {
-    private let flightDateFormatter = FlightDadeFormatter()
 
-    func getFormattedDate(date: String) -> String {
-        let date = flightDateFormatter.getDate(date: date)
-        let day = flightDateFormatter.dateFormatter.calendar.component(.day, from: date)
-        let month = flightDateFormatter.dateFormatter.calendar.component(.month, from: date).description
-        let monthName = Month(numberOfMonth: month).monthName
-        return String("\(day) \(monthName)")
+    let dateFormatter = DateFormatter()
+
+//    - MARK: по международному стандарту из кода можно получить только "сент.", а не "сен", очень много говнокода ради этого
+    func monthAndDay(from date: Date) -> String {
+        dateFormatter.dateFormat = "d MMM"
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        return dateFormatter.string(from: date)
     }
     
-    func getFormattedTime(date: String) -> String {
-        let date = flightDateFormatter.getDate(date: date)
-        let hours = flightDateFormatter.dateFormatter.calendar.component(.hour, from: date)
-        let minutes = flightDateFormatter.dateFormatter.calendar.component(.minute, from: date)
-        return String("\(hours):\(minutes)")
+    func hoursAndMinutes(from date: Date) -> String {
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: date)
     }
 }

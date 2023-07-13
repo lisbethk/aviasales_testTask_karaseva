@@ -40,24 +40,34 @@ protocol AllTicketsScreenViewModelOutputProtocol {
                 let tickets = info.results
                 tickets.forEach { results in
 
-                    guard let departureDate = self?.dateFormatterService.getFormattedDate(date: results.departureDateTime),
-                    let departureTime = self?.dateFormatterService.getFormattedTime(date: results.departureDateTime),
-                    let arrivalDate = self?.dateFormatterService.getFormattedDate(date: results.arrivalDateTime),
-                    let arrivalTime = self?.dateFormatterService.getFormattedTime(date: results.arrivalDateTime) else { return }
+                    guard let departureDate = self?.dateFormatterService.monthAndDay(from: results.departureDateTime),
+                          let departureTime = self?.dateFormatterService.hoursAndMinutes(from: results.departureDateTime),
+                          let arrivalDate = self?.dateFormatterService.monthAndDay(from: results.arrivalDateTime),
+                          let arrivalTime = self?.dateFormatterService.hoursAndMinutes(from: results.arrivalDateTime) else { return }
 
                     let price = self?.priceFormatterService.getFormattedPrice(price: String(results.price.value), currency: results.price.currency)
 
-                    let item = AllTicketsScreenModel.Item(id: results.id, price: price ?? "No data", company: results.airline, numberOfTickets: results.availableTicketsCound, origin: info.origin.name, originCode: info.origin.iata, destination: info.destination.name, destinationCode: info.destination.iata, departureDate: departureDate, departureTime: departureTime, arrivalDate: arrivalDate, arrivalTime: arrivalTime)
+                    let item = AllTicketsScreenModel.Item(id: results.id, price: price ?? "No data", company: results.airline, numberOfTickets: results.availableTicketsCound, origin: info.origin.name, originCode: info.origin.iata, destination: info.destination.name, destinationCode: info.destination.iata, departureDate: departureDate, departureTime: departureTime, arrivalDate: arrivalDate, arrivalTime: arrivalTime, passengersCount: String("\(info.passengersCount) чел"))
 
                     items.append(item)
                 }
+
+                guard let sortedTickets = self?.sortTickets(tickets: items) else { return }
                 DispatchQueue.main.async {
-                    self?.model = AllTicketsScreenModel(model: items)
+                    self?.model = AllTicketsScreenModel(model: sortedTickets)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
+    }
+
+    func sortTickets(tickets: [AllTicketsScreenModel.Item]) -> [AllTicketsScreenModel.Item] {
+        let sortedTickets = tickets.sorted {
+            $0.price < $1.price
+        }
+        return sortedTickets
+
     }
 
     func showDetails(of item: AllTicketsScreenModel.Item) {

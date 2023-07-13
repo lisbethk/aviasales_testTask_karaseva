@@ -33,8 +33,9 @@
 		74450AB62A5F2B9500683EBF /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB52A5F2B9500683EBF /* DataParser.swift */; };
 		74450AB82A5F3C6E00683EBF /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB72A5F3C6E00683EBF /* Ticket.swift */; };
 		74450ABB2A601FD100683EBF /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABA2A601FD100683EBF /* DateFormatterService.swift */; };
-		74450ABD2A60462500683EBF /* FlightDadeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABC2A60462500683EBF /* FlightDadeFormatter.swift */; };
+		74450ABD2A60462500683EBF /* FlightDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABC2A60462500683EBF /* FlightDateFormatter.swift */; };
 		74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */; };
+		74450AC12A6061A600683EBF /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AC02A6061A600683EBF /* DateValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +86,9 @@
 		74450AB52A5F2B9500683EBF /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		74450AB72A5F3C6E00683EBF /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		74450ABA2A601FD100683EBF /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
-		74450ABC2A60462500683EBF /* FlightDadeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDadeFormatter.swift; sourceTree = "<group>"; };
+		74450ABC2A60462500683EBF /* FlightDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateFormatter.swift; sourceTree = "<group>"; };
 		74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterService.swift; sourceTree = "<group>"; };
+		74450AC02A6061A600683EBF /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				74450AAF2A5F266700683EBF /* SearchRequest.swift */,
 				74450ABA2A601FD100683EBF /* DateFormatterService.swift */,
 				74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */,
+				74450AC02A6061A600683EBF /* DateValue.swift */,
 			);
 			path = "Service layer";
 			sourceTree = "<group>";
@@ -214,7 +217,7 @@
 				74450AB12A5F275D00683EBF /* RequestBuilder.swift */,
 				74450AB32A5F29CA00683EBF /* RequestProcessor.swift */,
 				74450AB52A5F2B9500683EBF /* DataParser.swift */,
-				74450ABC2A60462500683EBF /* FlightDadeFormatter.swift */,
+				74450ABC2A60462500683EBF /* FlightDateFormatter.swift */,
 			);
 			path = CoreLayer;
 			sourceTree = "<group>";
@@ -379,10 +382,11 @@
 				74450AAD2A5F253000683EBF /* RequestProtocol.swift in Sources */,
 				74450A9A2A5ECC6A00683EBF /* SearchService.swift in Sources */,
 				74450AA22A5ECCBF00683EBF /* HTTPTransport.swift in Sources */,
-				74450ABD2A60462500683EBF /* FlightDadeFormatter.swift in Sources */,
+				74450ABD2A60462500683EBF /* FlightDateFormatter.swift in Sources */,
 				74450A8E2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift in Sources */,
 				74450AB22A5F275D00683EBF /* RequestBuilder.swift in Sources */,
 				74450A8B2A5ECB8000683EBF /* MainFlowCoordinator.swift in Sources */,
+				74450AC12A6061A600683EBF /* DateValue.swift in Sources */,
 				74450A9C2A5ECC8000683EBF /* DispatchQueue.swift in Sources */,
 				74450A972A5ECC3B00683EBF /* FlightDetailsScreenView.swift in Sources */,
 			);

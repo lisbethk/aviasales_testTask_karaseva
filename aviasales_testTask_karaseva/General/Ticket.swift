@@ -33,8 +33,8 @@ struct Destination: Decodable {
 
 struct Results: Decodable {
     let id: String
-    let departureDateTime: String
-    let arrivalDateTime: String
+    @DateValue<ISO8601Strategy> var departureDateTime: Date
+    @DateValue<ISO8601Strategy> var arrivalDateTime: Date
     let price: Price
     let airline: String
     let availableTicketsCound: Int

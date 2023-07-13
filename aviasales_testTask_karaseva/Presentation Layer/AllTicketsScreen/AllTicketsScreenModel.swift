@@ -23,5 +23,6 @@ struct AllTicketsScreenModel {
         let departureTime: String
         let arrivalDate: String
         let arrivalTime: String
+        let passengersCount: String
     }
 }
