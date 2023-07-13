@@ -13,52 +13,59 @@ struct AllTicketsScreenView: View {
 
     var body: some View {
 
+
         ZStack {
             Color(UIColor.secondarySystemBackground)
                 .ignoresSafeArea()
                 .navigationTitle("Все билеты")
 
             let firstItem = viewModel.model.model.first
-            ScrollView(showsIndicators: false) {
-                ForEach(viewModel.model.model, id: \.id) { item in
-                    ZStack {
-                        ZStack(alignment: .topLeading) {
-                            RoundedRectangle(cornerRadius: 20)
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .foregroundColor(.white)
-                            if item.id == firstItem?.id {
-                                Badge()
-                                    .offset(x: 10, y: -10)
+                List(viewModel.model.model, id: \.id) { item in
+                    Section {
+                        ZStack {
+                            ZStack(alignment: .topLeading) {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .foregroundColor(.white)
+                                if item.id == firstItem?.id {
+                                    Badge()
+                                        .offset(x: 10, y: -10)
+                                }
                             }
-                        }
 
-                        LazyVStack(spacing: 15) {
-                            PriceCompanyView(viewModel: viewModel, item: item)
-                            OriginPointView(viewModel: viewModel, item: item)
-                            DestinationPointView(viewModel: viewModel, item: item)
-                        }
-                        .padding(20)
-                        .onTapGesture {
-                            viewModel.showDetails(of: item)
-                        }
-                        .toolbar {
-                            ToolbarItem(placement: .principal) {
-                                VStack {
-                                    Text("\(item.origin) — \(item.destination)")
-                                        .font(.headline
-                                            .weight(.semibold))
-                                    Text("\(item.departureDate), \(item.passengersCount)")
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
+                            LazyVStack(spacing: 15) {
+                                PriceCompanyView(viewModel: viewModel, item: item)
+                                OriginPointView(viewModel: viewModel, item: item)
+                                DestinationPointView(viewModel: viewModel, item: item)
+                            }
+                            .padding(20)
+                            .toolbar {
+                                ToolbarItem(placement: .principal) {
+
+                                    VStack {
+                                        Text("\(item.origin) — \(item.destination)")
+                                            .font(.headline
+                                                .weight(.semibold))
+                                        Text("\(item.departureDate), \(item.passengersCount)")
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                    }
                                 }
                             }
                         }
+                        .listRowBackground(Color.clear)
+                        .padding(5)
+                        .onTapGesture {
+                            viewModel.showDetails(of: item)
+                        }
                     }
-                    .padding(5)
+
+
                 }
+                .listRowInsets(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
+                .listStyle(.insetGrouped)
                 .padding(10)
             }
-        }
     }
 }
 

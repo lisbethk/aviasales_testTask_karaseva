@@ -45,7 +45,7 @@ protocol AllTicketsScreenViewModelOutputProtocol {
                           let arrivalDate = self?.dateFormatterService.monthAndDay(from: results.arrivalDateTime),
                           let arrivalTime = self?.dateFormatterService.hoursAndMinutes(from: results.arrivalDateTime) else { return }
 
-                    let price = self?.priceFormatterService.getFormattedPrice(price: String(results.price.value), currency: results.price.currency)
+                    let price = self?.priceFormatterService.getFormattedPrice(price: String(results.price.value))
 
                     let item = AllTicketsScreenModel.Item(id: results.id, price: price ?? "No data", company: results.airline, numberOfTickets: results.availableTicketsCound, origin: info.origin.name, originCode: info.origin.iata, destination: info.destination.name, destinationCode: info.destination.iata, departureDate: departureDate, departureTime: departureTime, arrivalDate: arrivalDate, arrivalTime: arrivalTime, passengersCount: String("\(info.passengersCount) чел"))
 
