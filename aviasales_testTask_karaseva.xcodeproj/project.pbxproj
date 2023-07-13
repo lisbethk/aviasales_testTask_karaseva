@@ -32,6 +32,9 @@
 		74450AB42A5F29CA00683EBF /* RequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB32A5F29CA00683EBF /* RequestProcessor.swift */; };
 		74450AB62A5F2B9500683EBF /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB52A5F2B9500683EBF /* DataParser.swift */; };
 		74450AB82A5F3C6E00683EBF /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB72A5F3C6E00683EBF /* Ticket.swift */; };
+		74450ABB2A601FD100683EBF /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABA2A601FD100683EBF /* DateFormatterService.swift */; };
+		74450ABD2A60462500683EBF /* FlightDadeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABC2A60462500683EBF /* FlightDadeFormatter.swift */; };
+		74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		74450AB32A5F29CA00683EBF /* RequestProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessor.swift; sourceTree = "<group>"; };
 		74450AB52A5F2B9500683EBF /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		74450AB72A5F3C6E00683EBF /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		74450ABA2A601FD100683EBF /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
+		74450ABC2A60462500683EBF /* FlightDadeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDadeFormatter.swift; sourceTree = "<group>"; };
+		74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,14 +137,11 @@
 		74450A592A5ECACE00683EBF /* aviasales_testTask_karaseva */ = {
 			isa = PBXGroup;
 			children = (
-				74450AAE2A5F253700683EBF /* CoreLayer */,
+				74450A682A5ECAD000683EBF /* Info.plist */,
 				74450AA32A5ECD6D00683EBF /* Presentation Layer */,
 				74450A982A5ECC5900683EBF /* Service layer */,
-				74450A5A2A5ECACE00683EBF /* AppDelegate.swift */,
-				74450A5C2A5ECACE00683EBF /* SceneDelegate.swift */,
-				74450A632A5ECAD000683EBF /* Assets.xcassets */,
-				74450A652A5ECAD000683EBF /* LaunchScreen.storyboard */,
-				74450A682A5ECAD000683EBF /* Info.plist */,
+				74450AAE2A5F253700683EBF /* CoreLayer */,
+				74450AB92A6012EA00683EBF /* General */,
 			);
 			path = aviasales_testTask_karaseva;
 			sourceTree = "<group>";
@@ -187,6 +190,8 @@
 			children = (
 				74450A992A5ECC6A00683EBF /* SearchService.swift */,
 				74450AAF2A5F266700683EBF /* SearchRequest.swift */,
+				74450ABA2A601FD100683EBF /* DateFormatterService.swift */,
+				74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */,
 			);
 			path = "Service layer";
 			sourceTree = "<group>";
@@ -194,8 +199,6 @@
 		74450AA32A5ECD6D00683EBF /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
-				74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */,
-				74450AB72A5F3C6E00683EBF /* Ticket.swift */,
 				74450A952A5ECC2400683EBF /* Flight Details Screen */,
 				74450A8C2A5ECB9D00683EBF /* AllTicketsScreen */,
 			);
@@ -211,8 +214,22 @@
 				74450AB12A5F275D00683EBF /* RequestBuilder.swift */,
 				74450AB32A5F29CA00683EBF /* RequestProcessor.swift */,
 				74450AB52A5F2B9500683EBF /* DataParser.swift */,
+				74450ABC2A60462500683EBF /* FlightDadeFormatter.swift */,
 			);
 			path = CoreLayer;
+			sourceTree = "<group>";
+		};
+		74450AB92A6012EA00683EBF /* General */ = {
+			isa = PBXGroup;
+			children = (
+				74450AB72A5F3C6E00683EBF /* Ticket.swift */,
+				74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */,
+				74450A5A2A5ECACE00683EBF /* AppDelegate.swift */,
+				74450A5C2A5ECACE00683EBF /* SceneDelegate.swift */,
+				74450A632A5ECAD000683EBF /* Assets.xcassets */,
+				74450A652A5ECAD000683EBF /* LaunchScreen.storyboard */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74450ABB2A601FD100683EBF /* DateFormatterService.swift in Sources */,
 				74450AA92A5F05B700683EBF /* FlightDetailsScreenAssembly.swift in Sources */,
 				74450A902A5ECBC900683EBF /* AllTicketsScreenModel.swift in Sources */,
 				74450AB02A5F266700683EBF /* SearchRequest.swift in Sources */,
@@ -356,10 +374,12 @@
 				74450AB42A5F29CA00683EBF /* RequestProcessor.swift in Sources */,
 				74450A5B2A5ECACE00683EBF /* AppDelegate.swift in Sources */,
 				74450A922A5ECBE800683EBF /* AllTicketsScreenView.swift in Sources */,
+				74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */,
 				74450A5D2A5ECACE00683EBF /* SceneDelegate.swift in Sources */,
 				74450AAD2A5F253000683EBF /* RequestProtocol.swift in Sources */,
 				74450A9A2A5ECC6A00683EBF /* SearchService.swift in Sources */,
 				74450AA22A5ECCBF00683EBF /* HTTPTransport.swift in Sources */,
+				74450ABD2A60462500683EBF /* FlightDadeFormatter.swift in Sources */,
 				74450A8E2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift in Sources */,
 				74450AB22A5F275D00683EBF /* RequestBuilder.swift in Sources */,
 				74450A8B2A5ECB8000683EBF /* MainFlowCoordinator.swift in Sources */,

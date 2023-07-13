@@ -12,7 +12,7 @@ struct AllTicketsScreenModel {
 
     struct Item {
         let id: String
-        let price: Int
+        let price: String
         let company: String
         let numberOfTickets: Int
         let origin: String

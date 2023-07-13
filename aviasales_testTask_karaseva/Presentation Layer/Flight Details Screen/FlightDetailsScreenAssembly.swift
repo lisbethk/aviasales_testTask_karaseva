@@ -17,8 +17,6 @@ final class FlightDetailsScreenAssembly: FlightDetailsScreenAssemblyProtocol {
         let viewModel = FlightDetailsScreenViewModel(model: input)
         let view = FlightDetailsScreenView(viewModel: viewModel, item: input)
         let hostingViewController = UIHostingController(rootView: view)
-//        let navigationController = UINavigationController(rootViewController: hostingViewController)
-//        hostingViewController.navigationItem.largeTitleDisplayMode = .never
         return hostingViewController
     }
 }

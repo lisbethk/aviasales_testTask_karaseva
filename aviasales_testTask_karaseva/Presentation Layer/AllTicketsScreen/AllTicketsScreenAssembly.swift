@@ -20,7 +20,7 @@ final class AllTicketsScreenAssembly: AllTicketsScreenAssemblyProtocol {
     }
 
     @MainActor func assemble(output: AllTicketsScreenViewModelOutputProtocol) -> UINavigationController {
-        let viewModel = AllTicketsScreenViewModel(output: output, searchService: searchService)
+        let viewModel = AllTicketsScreenViewModel(output: output, searchService: searchService, dateFormatterService: DateFormatterService(), priceFormatterService: PriceFormatterService())
         let view = AllTicketsScreenView(viewModel: viewModel)
         let hostingViewController = UIHostingController(rootView: view)
         let navigationController = UINavigationController(rootViewController: hostingViewController)

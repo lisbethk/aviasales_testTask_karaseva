@@ -14,5 +14,4 @@ import Foundation
     init(model: SelectedTicket) {
         self.model = model
     }
-
 }

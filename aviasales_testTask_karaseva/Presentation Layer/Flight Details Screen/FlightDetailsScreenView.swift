@@ -9,7 +9,9 @@ import Foundation
 import SwiftUI
 
 struct FlightDetailsScreenView: View {
+
     @ObservedObject var viewModel: FlightDetailsScreenViewModel
+
     var item: SelectedTicket
 
     var body: some View {
@@ -19,7 +21,6 @@ struct FlightDetailsScreenView: View {
                 .navigationBarTitle("", displayMode: .inline)
 
             VStack {
-
                 VStack {
                     Text("17 830 P")
                         .font(
@@ -47,6 +48,7 @@ struct FlightDetailsScreenView: View {
                     .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
+        
     }
 
 }
@@ -109,7 +111,8 @@ struct PurchaseTicketButtonView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(Color.orange)
-                .frame(width: 359, height: 48)
+                .frame(maxWidth: .infinity, maxHeight: 50)
+                .padding(10)
             Button("Купить билет за 17 830 P") {
                 showAlert.toggle()
             }

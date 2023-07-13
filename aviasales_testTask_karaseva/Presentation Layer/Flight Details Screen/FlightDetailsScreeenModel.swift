@@ -9,7 +9,7 @@ import Foundation
 
 struct SelectedTicket {
         let id: String
-        let price: Int
+        let price: String
         let company: String
         let origin: String
         let originCode: String

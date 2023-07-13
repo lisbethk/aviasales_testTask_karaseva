@@ -12,49 +12,55 @@ struct AllTicketsScreenView: View {
     @ObservedObject var viewModel: AllTicketsScreenViewModel
 
     var body: some View {
-        var firstItem = viewModel.model.model.first
 
-        List(viewModel.model.model, id: \.id) { item in
-            
-            ZStack {
-                ZStack(alignment: .topLeading) {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 343, height: 182)
-                        .foregroundColor(.white)
-                    if item.id == firstItem?.id {
-                        Badge()
-                            .offset(x: 20, y: -10)
-                    }
-                }
+        ZStack {
+            Color(UIColor.secondarySystemBackground)
+                .ignoresSafeArea()
+                .navigationTitle("Все билеты")
 
-                LazyVStack(spacing: 10) {
-                    PriceCompanyView(viewModel: viewModel, item: item)
-                    DestinationPointView(viewModel: viewModel, item: item)
-                    OriginPointView(viewModel: viewModel, item: item)
-                }
-                .padding(10)
-                .onTapGesture {
-                    viewModel.showDetails(of: item)
-                }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        VStack {
-                            Text("\(item.origin) — \(item.destination)")
-                            Text("\(item.departureDate)")
+            let firstItem = viewModel.model.model.first
+            ScrollView(showsIndicators: false) {
+                ForEach(viewModel.model.model, id: \.id) { item in
+                    ZStack {
+                        ZStack(alignment: .topLeading) {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .foregroundColor(.white)
+                            if item.id == firstItem?.id {
+                                Badge()
+                                    .offset(x: 10, y: -10)
+                            }
+                        }
+
+                        LazyVStack(spacing: 15) {
+                            PriceCompanyView(viewModel: viewModel, item: item)
+                            OriginPointView(viewModel: viewModel, item: item)
+                            DestinationPointView(viewModel: viewModel, item: item)
+                        }
+                        .padding(20)
+                        .onTapGesture {
+                            viewModel.showDetails(of: item)
+                        }
+                        .toolbar {
+                            ToolbarItem(placement: .principal) {
+                                VStack {
+                                    Text("\(item.origin) — \(item.destination)")
+                                        .font(.headline
+                                            .weight(.semibold))
+                                    Text("\(item.departureDate)")
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                }
+                            }
                         }
                     }
+                    .padding(5)
                 }
+                .padding(10)
             }
-            .listRowBackground(Color.clear)
-            .navigationTitle("Все билеты")
-            .listStyle(.plain)
-            .
         }
     }
 }
-
-
-
 
 struct PriceCompanyView: View {
 
@@ -64,13 +70,13 @@ struct PriceCompanyView: View {
 
         VStack(alignment: .leading) {
             HStack {
-                Text(item.company)
-//                Text(item.price)
+                Text(item.price)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.blue)
                 Spacer()
                 Image(item.company)
+                    .frame(width: 26, height: 26)
             }
             if item.numberOfTickets < 11 {
                 Text("Осталось \(item.numberOfTickets) билетов по этой цене")
@@ -135,39 +141,14 @@ struct OriginPointView: View {
 struct Badge: View {
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(.green)
-                .frame(width: 150, height: 20)
+                .frame(width: 145, height: 23)
                 .cornerRadius(10)
             Text("Самый дешевый")
                 .foregroundColor(.white)
-                .font(.caption
+                .font(.subheadline
                     .weight(.semibold))
-        }
-    }
-}
-
-//extension View {
-//    func addVerifiedBadge(_ isVerified: Bool) -> some View {
-//        ZStack(alignment: .topLeading) {
-//            self
-//
-//            if isVerified {
-//                Image(systemName: "checkmark.circle.fill")
-//                    .offset(x: 20, y: -20)
-//            }
-//        }
-//    }
-//}
-
-extension View {
-    func hideListRowSeperator() -> some View {
-        if #available(iOS 15, *) {
-            return AnyView(self.listRowSeparator(.hidden))
-        } else {
-            return AnyView(self.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .listRowInsets(EdgeInsets(top: -1, leading: -1, bottom: -1, trailing: -1))
-                .background(Color(.systemBackground)))
         }
     }
 }
