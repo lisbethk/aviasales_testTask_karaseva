@@ -8,8 +8,8 @@
 import Foundation
 
 struct SelectedTicket {
-        let id: UUID
-        let price: String
+        let id: String
+        let price: Int
         let company: String
         let origin: String
         let originCode: String

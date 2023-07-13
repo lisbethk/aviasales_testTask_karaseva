@@ -11,8 +11,8 @@ struct AllTicketsScreenModel {
     var model: [Item]
 
     struct Item {
-        let id: UUID
-        let price: String
+        let id: String
+        let price: Int
         let company: String
         let numberOfTickets: Int
         let origin: String

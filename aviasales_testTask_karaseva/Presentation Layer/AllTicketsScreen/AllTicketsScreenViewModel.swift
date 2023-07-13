@@ -24,19 +24,29 @@ protocol AllTicketsScreenViewModelProtocol {
 
     init(output: AllTicketsScreenViewModelOutputProtocol,
          searchService: SearchServiceProtocol
-         ) {
+    ) {
         self.output = output
         self.searchService = searchService
         loadTickets()
     }
 
     func loadTickets() {
-        let items = AllTicketsScreenModel.Item.init(id: UUID(), price: "12345", company: "avisasales", numberOfTickets: 8, origin: "Origin", originCode: "ORG", destination: "Destination", destinationCode: "DST", departureDate: "3 сен", departureTime: "20:52", arrivalDate: "3 сен", arrivalTime: "22:50")
-        model = AllTicketsScreenModel(model: [items])
+        var items = [AllTicketsScreenModel.Item]()
         searchService.findTickets(origin: "MOW", destination: "LED") { result in
-            print(result)
+            switch result {
+            case .success(let info):
+                let tickets = info.results
+                tickets.forEach { results in
+                    let item = AllTicketsScreenModel.Item(id: results.id, price: results.price.value, company: results.airline, numberOfTickets: results.availableTicketsCound, origin: info.origin.name, originCode: info.origin.iata, destination: info.destination.name, destinationCode: info.destination.iata, departureDate: results.departureDateTime, departureTime: results.departureDateTime, arrivalDate: results.arrivalDateTime, arrivalTime: results.arrivalDateTime)
+                    items.append(item)
+                }
+                DispatchQueue.main.async {
+                    self.model = AllTicketsScreenModel(model: items)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
-
     }
 
     func showDetails(of item: AllTicketsScreenModel.Item) {

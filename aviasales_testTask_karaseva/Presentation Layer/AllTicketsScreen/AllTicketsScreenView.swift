@@ -12,8 +12,21 @@ struct AllTicketsScreenView: View {
     @ObservedObject var viewModel: AllTicketsScreenViewModel
 
     var body: some View {
+        var firstItem = viewModel.model.model.first
 
-            List(viewModel.model.model, id: \.id) { item in
+        List(viewModel.model.model, id: \.id) { item in
+            
+            ZStack {
+                ZStack(alignment: .topLeading) {
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: 343, height: 182)
+                        .foregroundColor(.white)
+                    if item.id == firstItem?.id {
+                        Badge()
+                            .offset(x: 20, y: -10)
+                    }
+                }
+
                 LazyVStack(spacing: 10) {
                     PriceCompanyView(viewModel: viewModel, item: item)
                     DestinationPointView(viewModel: viewModel, item: item)
@@ -31,12 +44,13 @@ struct AllTicketsScreenView: View {
                         }
                     }
                 }
-
             }
-            .overlay(Badge().offset(x: 30, y: 20), alignment: .topLeading)
+            .listRowBackground(Color.clear)
             .navigationTitle("Все билеты")
+            .listStyle(.plain)
+            .
+        }
     }
-
 }
 
 
@@ -50,7 +64,8 @@ struct PriceCompanyView: View {
 
         VStack(alignment: .leading) {
             HStack {
-                Text(item.price)
+                Text(item.company)
+//                Text(item.price)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.blue)
@@ -144,3 +159,15 @@ struct Badge: View {
 //        }
 //    }
 //}
+
+extension View {
+    func hideListRowSeperator() -> some View {
+        if #available(iOS 15, *) {
+            return AnyView(self.listRowSeparator(.hidden))
+        } else {
+            return AnyView(self.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .listRowInsets(EdgeInsets(top: -1, leading: -1, bottom: -1, trailing: -1))
+                .background(Color(.systemBackground)))
+        }
+    }
+}

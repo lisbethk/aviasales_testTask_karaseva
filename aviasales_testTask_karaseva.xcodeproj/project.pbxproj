@@ -195,9 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */,
+				74450AB72A5F3C6E00683EBF /* Ticket.swift */,
 				74450A952A5ECC2400683EBF /* Flight Details Screen */,
 				74450A8C2A5ECB9D00683EBF /* AllTicketsScreen */,
-				74450AB72A5F3C6E00683EBF /* Ticket.swift */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
