@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+// на вход чтоб строчку получало
+
+struct BadgeModel {
+    let text: String
+}
+
 struct BadgeView: View {
+    let model: BadgeModel
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
@@ -16,7 +23,7 @@ struct BadgeView: View {
                 )
                 .frame(width: 145, height: 23)
                 .cornerRadius(10)
-            Text("Самый дешевый")
+            Text(model.text)
                 .foregroundColor(
                     Color(UIColor.white)
                 )

@@ -16,11 +16,25 @@ final class MainFlowCoordinator {
         dispatchQueue: dispatchQueue,
         httpTransport: URLSession.shared
     )
-    
-    private lazy var searchService = SearchService(requestProcessor: requestProcessor)
-    private lazy var allTicketsScreenAssembly = AllTicketsScreenAssembly(searchService: searchService)
-    private lazy var flightDetailsScreenAssembly = FlightDetailsScreenAssembly()
+    private lazy var dateFormatterService = DateFormatterService()
+    private lazy var priceFormatter = PriceFormatterService()
+    private lazy var ticketDetailsInfoModelFactory = TicketDetailsInfoModelFactory(dateFormatterService: dateFormatterService)
+    private lazy var ticketListModelFactory = TicketListModelFactory(
+        dateFormatterService: dateFormatterService,
+        priceFormatter: priceFormatter,
+        ticketDetailsInfoModelFactory: ticketDetailsInfoModelFactory
+    )
 
+    private lazy var ticketDetailsModelFactory = TicketDetailsModelFactory(
+        ticketDetailsInfoModelFactory: ticketDetailsInfoModelFactory,
+        priceFormatter: priceFormatter
+    )
+    private lazy var searchService = SearchService(requestProcessor: requestProcessor)
+    private lazy var allTicketsScreenAssembly = TicketListAssembly(
+        searchService: searchService,
+        ticketListModelFactory: ticketListModelFactory
+    )
+    private lazy var ticketDetailsAssembly = TicketDetailsAssembly(ticketDetailsModelFactory: ticketDetailsModelFactory)
 
     private var rootViewController = UINavigationController()
 
@@ -32,24 +46,20 @@ final class MainFlowCoordinator {
     }
 }
 
-extension MainFlowCoordinator: AllTicketsScreenViewModelOutputProtocol {
-    @MainActor func showSelectedTicket(item: AllTicketsScreenModel.Item) {
+extension MainFlowCoordinator: TicketListViewModelOutputProtocol {
+    func showDetails(
+        ticket: Ticket,
+        origin: Origin,
+        destination: Destination,
+        passengersCount: Int
+    ) {
 
-        let ticket = SelectedTicket(id: item.id,
-                                    price: item.price,
-                                    company: item.company,
-                                    origin: item.origin,
-                                    originCode: item.originCode,
-                                    destination: item.destination,
-                                    destinationCode: item.destinationCode,
-                                    departureDate: item.departureDate,
-                                    departureTime: item.departureTime,
-                                    arrivalDate: item.arrivalDate,
-                                    arrivalTime: item.arrivalTime,
-                                    numberOfPassengers: item.passengersCount)
-
-        let viewController = flightDetailsScreenAssembly.assemble(input: ticket)
-
+        let viewController = ticketDetailsAssembly.assemble(
+            ticket: ticket,
+            origin: origin,
+            destination: destination,
+            passengersCount: passengersCount
+        )
         rootViewController.pushViewController(viewController,
                                               animated: true)
     }

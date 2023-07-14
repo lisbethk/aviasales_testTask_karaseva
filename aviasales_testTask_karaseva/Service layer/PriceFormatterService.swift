@@ -1,5 +1,5 @@
 //
-//  PriceFormatter.swift
+//  PriceFormatterService.swift
 //  aviasales_testTask_karaseva
 //
 //  Created by Lisbeth Karasev on 13.07.2023.

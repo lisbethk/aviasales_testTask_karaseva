@@ -1,5 +1,5 @@
 //
-//  TimeFormatterService.swift
+//  dateFormatterService.swift
 //  aviasales_testTask_karaseva
 //
 //  Created by Lisbeth Karasev on 13.07.2023.

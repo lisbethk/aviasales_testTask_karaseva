@@ -11,43 +11,46 @@
 		74450A5D2A5ECACE00683EBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A5C2A5ECACE00683EBF /* SceneDelegate.swift */; };
 		74450A642A5ECAD000683EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74450A632A5ECAD000683EBF /* Assets.xcassets */; };
 		74450A672A5ECAD000683EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74450A652A5ECAD000683EBF /* LaunchScreen.storyboard */; };
-		74450A722A5ECAD000683EBF /* aviasales_testTask_karasevaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A712A5ECAD000683EBF /* aviasales_testTask_karasevaTests.swift */; };
+		74450A722A5ECAD000683EBF /* SearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A712A5ECAD000683EBF /* SearchServiceTest.swift */; };
 		74450A7C2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A7B2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift */; };
 		74450A7E2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A7D2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift */; };
 		74450A8B2A5ECB8000683EBF /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */; };
-		74450A8E2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A8D2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift */; };
-		74450A902A5ECBC900683EBF /* AllTicketsScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A8F2A5ECBC900683EBF /* AllTicketsScreenModel.swift */; };
-		74450A922A5ECBE800683EBF /* AllTicketsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A912A5ECBE800683EBF /* AllTicketsScreenView.swift */; };
-		74450A942A5ECC0600683EBF /* AllTicketsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A932A5ECC0600683EBF /* AllTicketsScreenAssembly.swift */; };
-		74450A972A5ECC3B00683EBF /* FlightDetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A962A5ECC3B00683EBF /* FlightDetailsScreenView.swift */; };
+		74450A8E2A5ECBAD00683EBF /* TicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A8D2A5ECBAD00683EBF /* TicketListViewModel.swift */; };
+		74450A922A5ECBE800683EBF /* TicketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A912A5ECBE800683EBF /* TicketListView.swift */; };
+		74450A942A5ECC0600683EBF /* TicketListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A932A5ECC0600683EBF /* TicketListAssembly.swift */; };
+		74450A972A5ECC3B00683EBF /* TicketDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A962A5ECC3B00683EBF /* TicketDetailsView.swift */; };
 		74450A9A2A5ECC6A00683EBF /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A992A5ECC6A00683EBF /* SearchService.swift */; };
 		74450A9C2A5ECC8000683EBF /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A9B2A5ECC8000683EBF /* DispatchQueue.swift */; };
 		74450AA22A5ECCBF00683EBF /* HTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AA12A5ECCBF00683EBF /* HTTPTransport.swift */; };
-		74450AA52A5EEB8700683EBF /* FlightDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AA42A5EEB8700683EBF /* FlightDetailsScreenViewModel.swift */; };
-		74450AA72A5EEC0E00683EBF /* FlightDetailsScreeenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AA62A5EEC0E00683EBF /* FlightDetailsScreeenModel.swift */; };
-		74450AA92A5F05B700683EBF /* FlightDetailsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AA82A5F05B700683EBF /* FlightDetailsScreenAssembly.swift */; };
+		74450AA52A5EEB8700683EBF /* TicketDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AA42A5EEB8700683EBF /* TicketDetailsViewModel.swift */; };
+		74450AA92A5F05B700683EBF /* TicketDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AA82A5F05B700683EBF /* TicketDetailsAssembly.swift */; };
 		74450AAD2A5F253000683EBF /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AAC2A5F253000683EBF /* RequestProtocol.swift */; };
 		74450AB02A5F266700683EBF /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AAF2A5F266700683EBF /* SearchRequest.swift */; };
 		74450AB22A5F275D00683EBF /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB12A5F275D00683EBF /* RequestBuilder.swift */; };
 		74450AB42A5F29CA00683EBF /* RequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB32A5F29CA00683EBF /* RequestProcessor.swift */; };
 		74450AB62A5F2B9500683EBF /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB52A5F2B9500683EBF /* DataParser.swift */; };
-		74450AB82A5F3C6E00683EBF /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB72A5F3C6E00683EBF /* Ticket.swift */; };
+		74450AB82A5F3C6E00683EBF /* SearchRequestResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AB72A5F3C6E00683EBF /* SearchRequestResponceModel.swift */; };
 		74450ABB2A601FD100683EBF /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABA2A601FD100683EBF /* DateFormatterService.swift */; };
 		74450ABD2A60462500683EBF /* FlightDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABC2A60462500683EBF /* FlightDateFormatter.swift */; };
 		74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */; };
 		74450AC12A6061A600683EBF /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AC02A6061A600683EBF /* DateValue.swift */; };
-		7498784B2A61642600DC279E /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784A2A61642600DC279E /* ListCellView.swift */; };
-		7498784D2A61646000DC279E /* OriginDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784C2A61646000DC279E /* OriginDestinationView.swift */; };
+		7498784B2A61642600DC279E /* TicketListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784A2A61642600DC279E /* TicketListCellView.swift */; };
+		7498784D2A61646000DC279E /* TextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784C2A61646000DC279E /* TextStackView.swift */; };
 		7498784F2A61647800DC279E /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784E2A61647800DC279E /* BadgeView.swift */; };
-		749878512A61649E00DC279E /* TicketListToolBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878502A61649E00DC279E /* TicketListToolBarItemView.swift */; };
-		749878532A6164DB00DC279E /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878522A6164DB00DC279E /* LoaderView.swift */; };
-		749878552A6164FB00DC279E /* PriceCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878542A6164FB00DC279E /* PriceCompanyView.swift */; };
-		749878572A61651200DC279E /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878562A61651200DC279E /* BackgroundColorView.swift */; };
-		749878592A61653100DC279E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878582A61653100DC279E /* MainView.swift */; };
-		7498785C2A61656600DC279E /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498785B2A61656600DC279E /* PriceView.swift */; };
-		7498785E2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498785D2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift */; };
+		749878512A61649E00DC279E /* TicketListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878502A61649E00DC279E /* TicketListHeaderView.swift */; };
+		749878552A6164FB00DC279E /* TicketListCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878542A6164FB00DC279E /* TicketListCellHeaderView.swift */; };
+		749878592A61653100DC279E /* TicketListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878582A61653100DC279E /* TicketListScrollView.swift */; };
+		7498785C2A61656600DC279E /* TicketDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498785B2A61656600DC279E /* TicketDetailsHeaderView.swift */; };
 		749878602A6165A000DC279E /* TicketInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498785F2A6165A000DC279E /* TicketInformationView.swift */; };
-		749878622A6165BE00DC279E /* PurchaseTicketBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878612A6165BE00DC279E /* PurchaseTicketBottomView.swift */; };
+		749878622A6165BE00DC279E /* TicketDetailsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878612A6165BE00DC279E /* TicketDetailsButtonView.swift */; };
+		7498786C2A61979F00DC279E /* RequestBuilderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498786B2A61979F00DC279E /* RequestBuilderMock.swift */; };
+		7498786E2A6197AA00DC279E /* DataParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498786D2A6197AA00DC279E /* DataParserMock.swift */; };
+		749878702A6197B400DC279E /* DispatchQueueMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498786F2A6197B400DC279E /* DispatchQueueMock.swift */; };
+		749878722A6197BD00DC279E /* HTTPTransportMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878712A6197BD00DC279E /* HTTPTransportMock.swift */; };
+		749878762A61BDD900DC279E /* TicketDetailsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878752A61BDD900DC279E /* TicketDetailsInfoView.swift */; };
+		7498787A2A61DFFC00DC279E /* TicketListModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878792A61DFFC00DC279E /* TicketListModelFactory.swift */; };
+		7498787C2A61F19800DC279E /* TicketDetailsModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498787B2A61F19800DC279E /* TicketDetailsModelFactory.swift */; };
+		7498787F2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498787E2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,44 +78,47 @@
 		74450A662A5ECAD000683EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74450A682A5ECAD000683EBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74450A6D2A5ECAD000683EBF /* aviasales_testTask_karasevaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aviasales_testTask_karasevaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		74450A712A5ECAD000683EBF /* aviasales_testTask_karasevaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aviasales_testTask_karasevaTests.swift; sourceTree = "<group>"; };
+		74450A712A5ECAD000683EBF /* SearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceTest.swift; sourceTree = "<group>"; };
 		74450A772A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aviasales_testTask_karasevaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74450A7B2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aviasales_testTask_karasevaUITests.swift; sourceTree = "<group>"; };
 		74450A7D2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aviasales_testTask_karasevaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
-		74450A8D2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTicketsScreenViewModel.swift; sourceTree = "<group>"; };
-		74450A8F2A5ECBC900683EBF /* AllTicketsScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTicketsScreenModel.swift; sourceTree = "<group>"; };
-		74450A912A5ECBE800683EBF /* AllTicketsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTicketsScreenView.swift; sourceTree = "<group>"; };
-		74450A932A5ECC0600683EBF /* AllTicketsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTicketsScreenAssembly.swift; sourceTree = "<group>"; };
-		74450A962A5ECC3B00683EBF /* FlightDetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsScreenView.swift; sourceTree = "<group>"; };
+		74450A8D2A5ECBAD00683EBF /* TicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewModel.swift; sourceTree = "<group>"; };
+		74450A912A5ECBE800683EBF /* TicketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListView.swift; sourceTree = "<group>"; };
+		74450A932A5ECC0600683EBF /* TicketListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListAssembly.swift; sourceTree = "<group>"; };
+		74450A962A5ECC3B00683EBF /* TicketDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsView.swift; sourceTree = "<group>"; };
 		74450A992A5ECC6A00683EBF /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		74450A9B2A5ECC8000683EBF /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		74450AA12A5ECCBF00683EBF /* HTTPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTransport.swift; sourceTree = "<group>"; };
-		74450AA42A5EEB8700683EBF /* FlightDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsScreenViewModel.swift; sourceTree = "<group>"; };
-		74450AA62A5EEC0E00683EBF /* FlightDetailsScreeenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsScreeenModel.swift; sourceTree = "<group>"; };
-		74450AA82A5F05B700683EBF /* FlightDetailsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsScreenAssembly.swift; sourceTree = "<group>"; };
+		74450AA42A5EEB8700683EBF /* TicketDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsViewModel.swift; sourceTree = "<group>"; };
+		74450AA82A5F05B700683EBF /* TicketDetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsAssembly.swift; sourceTree = "<group>"; };
 		74450AAC2A5F253000683EBF /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		74450AAF2A5F266700683EBF /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		74450AB12A5F275D00683EBF /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		74450AB32A5F29CA00683EBF /* RequestProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessor.swift; sourceTree = "<group>"; };
 		74450AB52A5F2B9500683EBF /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
-		74450AB72A5F3C6E00683EBF /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		74450AB72A5F3C6E00683EBF /* SearchRequestResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestResponceModel.swift; sourceTree = "<group>"; };
 		74450ABA2A601FD100683EBF /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
 		74450ABC2A60462500683EBF /* FlightDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateFormatter.swift; sourceTree = "<group>"; };
 		74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterService.swift; sourceTree = "<group>"; };
 		74450AC02A6061A600683EBF /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
-		7498784A2A61642600DC279E /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
-		7498784C2A61646000DC279E /* OriginDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginDestinationView.swift; sourceTree = "<group>"; };
+		7498784A2A61642600DC279E /* TicketListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListCellView.swift; sourceTree = "<group>"; };
+		7498784C2A61646000DC279E /* TextStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStackView.swift; sourceTree = "<group>"; };
 		7498784E2A61647800DC279E /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
-		749878502A61649E00DC279E /* TicketListToolBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListToolBarItemView.swift; sourceTree = "<group>"; };
-		749878522A6164DB00DC279E /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
-		749878542A6164FB00DC279E /* PriceCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCompanyView.swift; sourceTree = "<group>"; };
-		749878562A61651200DC279E /* BackgroundColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorView.swift; sourceTree = "<group>"; };
-		749878582A61653100DC279E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		7498785B2A61656600DC279E /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
-		7498785D2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OridinDestinationAndTicketInfoView.swift; sourceTree = "<group>"; };
+		749878502A61649E00DC279E /* TicketListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListHeaderView.swift; sourceTree = "<group>"; };
+		749878542A6164FB00DC279E /* TicketListCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListCellHeaderView.swift; sourceTree = "<group>"; };
+		749878582A61653100DC279E /* TicketListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListScrollView.swift; sourceTree = "<group>"; };
+		7498785B2A61656600DC279E /* TicketDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsHeaderView.swift; sourceTree = "<group>"; };
 		7498785F2A6165A000DC279E /* TicketInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInformationView.swift; sourceTree = "<group>"; };
-		749878612A6165BE00DC279E /* PurchaseTicketBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTicketBottomView.swift; sourceTree = "<group>"; };
+		749878612A6165BE00DC279E /* TicketDetailsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsButtonView.swift; sourceTree = "<group>"; };
+		7498786B2A61979F00DC279E /* RequestBuilderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderMock.swift; sourceTree = "<group>"; };
+		7498786D2A6197AA00DC279E /* DataParserMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParserMock.swift; sourceTree = "<group>"; };
+		7498786F2A6197B400DC279E /* DispatchQueueMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueMock.swift; sourceTree = "<group>"; };
+		749878712A6197BD00DC279E /* HTTPTransportMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTransportMock.swift; sourceTree = "<group>"; };
+		749878752A61BDD900DC279E /* TicketDetailsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsInfoView.swift; sourceTree = "<group>"; };
+		749878792A61DFFC00DC279E /* TicketListModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListModelFactory.swift; sourceTree = "<group>"; };
+		7498787B2A61F19800DC279E /* TicketDetailsModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsModelFactory.swift; sourceTree = "<group>"; };
+		7498787E2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsInfoModelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +149,9 @@
 		74450A4E2A5ECACE00683EBF = {
 			isa = PBXGroup;
 			children = (
-				74450A592A5ECACE00683EBF /* aviasales_testTask_karaseva */,
-				74450A702A5ECAD000683EBF /* aviasales_testTask_karasevaTests */,
 				74450A7A2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests */,
+				74450A702A5ECAD000683EBF /* aviasales_testTask_karasevaTests */,
+				74450A592A5ECACE00683EBF /* aviasales_testTask_karaseva */,
 				74450A582A5ECACE00683EBF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,7 +181,8 @@
 		74450A702A5ECAD000683EBF /* aviasales_testTask_karasevaTests */ = {
 			isa = PBXGroup;
 			children = (
-				74450A712A5ECAD000683EBF /* aviasales_testTask_karasevaTests.swift */,
+				7498786A2A6195A600DC279E /* Mocks */,
+				74450A712A5ECAD000683EBF /* SearchServiceTest.swift */,
 			);
 			path = aviasales_testTask_karasevaTests;
 			sourceTree = "<group>";
@@ -193,10 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				749878492A61640B00DC279E /* Views */,
-				74450A8D2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift */,
-				74450A8F2A5ECBC900683EBF /* AllTicketsScreenModel.swift */,
-				74450A912A5ECBE800683EBF /* AllTicketsScreenView.swift */,
-				74450A932A5ECC0600683EBF /* AllTicketsScreenAssembly.swift */,
+				74450A8D2A5ECBAD00683EBF /* TicketListViewModel.swift */,
+				74450A932A5ECC0600683EBF /* TicketListAssembly.swift */,
+				74450A912A5ECBE800683EBF /* TicketListView.swift */,
+				749878792A61DFFC00DC279E /* TicketListModelFactory.swift */,
 			);
 			path = AllTicketsScreen;
 			sourceTree = "<group>";
@@ -205,10 +212,10 @@
 			isa = PBXGroup;
 			children = (
 				7498785A2A61655600DC279E /* Views */,
-				74450A962A5ECC3B00683EBF /* FlightDetailsScreenView.swift */,
-				74450AA42A5EEB8700683EBF /* FlightDetailsScreenViewModel.swift */,
-				74450AA62A5EEC0E00683EBF /* FlightDetailsScreeenModel.swift */,
-				74450AA82A5F05B700683EBF /* FlightDetailsScreenAssembly.swift */,
+				74450A962A5ECC3B00683EBF /* TicketDetailsView.swift */,
+				74450AA42A5EEB8700683EBF /* TicketDetailsViewModel.swift */,
+				74450AA82A5F05B700683EBF /* TicketDetailsAssembly.swift */,
+				7498787B2A61F19800DC279E /* TicketDetailsModelFactory.swift */,
 			);
 			path = "Flight Details Screen";
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 		74450A982A5ECC5900683EBF /* Service layer */ = {
 			isa = PBXGroup;
 			children = (
+				74450AB72A5F3C6E00683EBF /* SearchRequestResponceModel.swift */,
 				74450A992A5ECC6A00683EBF /* SearchService.swift */,
 				74450AAF2A5F266700683EBF /* SearchRequest.swift */,
 				74450ABA2A601FD100683EBF /* DateFormatterService.swift */,
@@ -228,6 +236,7 @@
 		74450AA32A5ECD6D00683EBF /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				749878772A61CF4B00DC279E /* Common */,
 				74450A952A5ECC2400683EBF /* Flight Details Screen */,
 				74450A8C2A5ECB9D00683EBF /* AllTicketsScreen */,
 			);
@@ -251,7 +260,6 @@
 		74450AB92A6012EA00683EBF /* General */ = {
 			isa = PBXGroup;
 			children = (
-				74450AB72A5F3C6E00683EBF /* Ticket.swift */,
 				74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */,
 				74450A5A2A5ECACE00683EBF /* AppDelegate.swift */,
 				74450A5C2A5ECACE00683EBF /* SceneDelegate.swift */,
@@ -264,14 +272,11 @@
 		749878492A61640B00DC279E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7498784A2A61642600DC279E /* ListCellView.swift */,
-				7498784C2A61646000DC279E /* OriginDestinationView.swift */,
+				7498784A2A61642600DC279E /* TicketListCellView.swift */,
 				7498784E2A61647800DC279E /* BadgeView.swift */,
-				749878502A61649E00DC279E /* TicketListToolBarItemView.swift */,
-				749878522A6164DB00DC279E /* LoaderView.swift */,
-				749878542A6164FB00DC279E /* PriceCompanyView.swift */,
-				749878562A61651200DC279E /* BackgroundColorView.swift */,
-				749878582A61653100DC279E /* MainView.swift */,
+				749878502A61649E00DC279E /* TicketListHeaderView.swift */,
+				749878542A6164FB00DC279E /* TicketListCellHeaderView.swift */,
+				749878582A61653100DC279E /* TicketListScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,12 +284,48 @@
 		7498785A2A61655600DC279E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7498785B2A61656600DC279E /* PriceView.swift */,
-				7498785D2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift */,
+				7498785B2A61656600DC279E /* TicketDetailsHeaderView.swift */,
 				7498785F2A6165A000DC279E /* TicketInformationView.swift */,
-				749878612A6165BE00DC279E /* PurchaseTicketBottomView.swift */,
+				749878612A6165BE00DC279E /* TicketDetailsButtonView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7498786A2A6195A600DC279E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7498786B2A61979F00DC279E /* RequestBuilderMock.swift */,
+				7498786D2A6197AA00DC279E /* DataParserMock.swift */,
+				7498786F2A6197B400DC279E /* DispatchQueueMock.swift */,
+				749878712A6197BD00DC279E /* HTTPTransportMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		749878772A61CF4B00DC279E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7498787D2A61F2E100DC279E /* Factories */,
+				749878782A61CF5400DC279E /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		749878782A61CF5400DC279E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				749878752A61BDD900DC279E /* TicketDetailsInfoView.swift */,
+				7498784C2A61646000DC279E /* TextStackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7498787D2A61F2E100DC279E /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				7498787E2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,42 +458,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7498787A2A61DFFC00DC279E /* TicketListModelFactory.swift in Sources */,
 				74450ABB2A601FD100683EBF /* DateFormatterService.swift in Sources */,
-				74450AA92A5F05B700683EBF /* FlightDetailsScreenAssembly.swift in Sources */,
-				74450A902A5ECBC900683EBF /* AllTicketsScreenModel.swift in Sources */,
+				74450AA92A5F05B700683EBF /* TicketDetailsAssembly.swift in Sources */,
 				74450AB02A5F266700683EBF /* SearchRequest.swift in Sources */,
-				749878532A6164DB00DC279E /* LoaderView.swift in Sources */,
-				74450A942A5ECC0600683EBF /* AllTicketsScreenAssembly.swift in Sources */,
-				74450AA52A5EEB8700683EBF /* FlightDetailsScreenViewModel.swift in Sources */,
-				74450AB82A5F3C6E00683EBF /* Ticket.swift in Sources */,
-				749878622A6165BE00DC279E /* PurchaseTicketBottomView.swift in Sources */,
-				74450AA72A5EEC0E00683EBF /* FlightDetailsScreeenModel.swift in Sources */,
-				749878592A61653100DC279E /* MainView.swift in Sources */,
+				74450A942A5ECC0600683EBF /* TicketListAssembly.swift in Sources */,
+				74450AA52A5EEB8700683EBF /* TicketDetailsViewModel.swift in Sources */,
+				749878762A61BDD900DC279E /* TicketDetailsInfoView.swift in Sources */,
+				74450AB82A5F3C6E00683EBF /* SearchRequestResponceModel.swift in Sources */,
+				749878622A6165BE00DC279E /* TicketDetailsButtonView.swift in Sources */,
+				7498787C2A61F19800DC279E /* TicketDetailsModelFactory.swift in Sources */,
+				749878592A61653100DC279E /* TicketListScrollView.swift in Sources */,
+				7498787F2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift in Sources */,
 				74450AB62A5F2B9500683EBF /* DataParser.swift in Sources */,
-				7498785E2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift in Sources */,
 				74450AB42A5F29CA00683EBF /* RequestProcessor.swift in Sources */,
 				74450A5B2A5ECACE00683EBF /* AppDelegate.swift in Sources */,
-				74450A922A5ECBE800683EBF /* AllTicketsScreenView.swift in Sources */,
-				7498785C2A61656600DC279E /* PriceView.swift in Sources */,
+				74450A922A5ECBE800683EBF /* TicketListView.swift in Sources */,
+				7498785C2A61656600DC279E /* TicketDetailsHeaderView.swift in Sources */,
 				749878602A6165A000DC279E /* TicketInformationView.swift in Sources */,
 				74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */,
-				749878552A6164FB00DC279E /* PriceCompanyView.swift in Sources */,
+				749878552A6164FB00DC279E /* TicketListCellHeaderView.swift in Sources */,
 				74450A5D2A5ECACE00683EBF /* SceneDelegate.swift in Sources */,
 				74450AAD2A5F253000683EBF /* RequestProtocol.swift in Sources */,
 				7498784F2A61647800DC279E /* BadgeView.swift in Sources */,
 				74450A9A2A5ECC6A00683EBF /* SearchService.swift in Sources */,
 				74450AA22A5ECCBF00683EBF /* HTTPTransport.swift in Sources */,
-				749878572A61651200DC279E /* BackgroundColorView.swift in Sources */,
 				74450ABD2A60462500683EBF /* FlightDateFormatter.swift in Sources */,
-				74450A8E2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift in Sources */,
+				74450A8E2A5ECBAD00683EBF /* TicketListViewModel.swift in Sources */,
 				74450AB22A5F275D00683EBF /* RequestBuilder.swift in Sources */,
 				74450A8B2A5ECB8000683EBF /* MainFlowCoordinator.swift in Sources */,
 				74450AC12A6061A600683EBF /* DateValue.swift in Sources */,
-				749878512A61649E00DC279E /* TicketListToolBarItemView.swift in Sources */,
+				749878512A61649E00DC279E /* TicketListHeaderView.swift in Sources */,
 				74450A9C2A5ECC8000683EBF /* DispatchQueue.swift in Sources */,
-				7498784D2A61646000DC279E /* OriginDestinationView.swift in Sources */,
-				74450A972A5ECC3B00683EBF /* FlightDetailsScreenView.swift in Sources */,
-				7498784B2A61642600DC279E /* ListCellView.swift in Sources */,
+				7498784D2A61646000DC279E /* TextStackView.swift in Sources */,
+				74450A972A5ECC3B00683EBF /* TicketDetailsView.swift in Sources */,
+				7498784B2A61642600DC279E /* TicketListCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +500,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74450A722A5ECAD000683EBF /* aviasales_testTask_karasevaTests.swift in Sources */,
+				7498786E2A6197AA00DC279E /* DataParserMock.swift in Sources */,
+				749878702A6197B400DC279E /* DispatchQueueMock.swift in Sources */,
+				74450A722A5ECAD000683EBF /* SearchServiceTest.swift in Sources */,
+				749878722A6197BD00DC279E /* HTTPTransportMock.swift in Sources */,
+				7498786C2A61979F00DC279E /* RequestBuilderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -609,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -692,7 +736,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HYZTUHFK6R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hvostikcompany.aviasales-testTask-karasevaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -712,7 +756,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HYZTUHFK6R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hvostikcompany.aviasales-testTask-karasevaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -731,6 +775,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HYZTUHFK6R;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hvostikcompany.aviasales-testTask-karasevaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -749,6 +794,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HYZTUHFK6R;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hvostikcompany.aviasales-testTask-karasevaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

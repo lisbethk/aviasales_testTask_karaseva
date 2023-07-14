@@ -8,7 +8,7 @@
 import Foundation
 
 final class SearchRequest: RequestProtocol {
-    typealias Model = Ticket
+    typealias Model = SearchRequestResponceModel
 
     private let origin: String
     private let destination: String

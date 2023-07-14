@@ -1,5 +1,5 @@
 //
-//  VsepokaRequestService.swift
+//  SearchService.swift
 //  aviasales_testTask_karaseva
 //
 //  Created by Lisbeth Karasev on 12.07.2023.
@@ -37,5 +37,3 @@ final class SearchService: SearchServiceProtocol {
         )
     }
 }
-
-

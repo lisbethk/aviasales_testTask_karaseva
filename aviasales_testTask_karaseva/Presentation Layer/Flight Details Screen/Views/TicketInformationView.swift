@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+struct TicketInformationModel {
+    let companyName: String
+    let ticketDetailsModel: TicketDetailsInfoModel
+}
+
 struct TicketInformationView: View {
-    var item: SelectedTicket
+    let model: TicketInformationModel
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
@@ -16,15 +21,14 @@ struct TicketInformationView: View {
                     Color(UIColor.secondarySystemGroupedBackground)
                 )
                 .frame(maxWidth: .infinity,
-                       minHeight: 160,
-                       maxHeight: 170,
+                       maxHeight: 180,
                        alignment: .center)
                 .padding(.horizontal,
                          20)
             VStack(spacing: 15) {
                 HStack(spacing: 10) {
-                    Image(item.company)
-                    Text(item.company)
+                    Image(model.companyName)
+                    Text(model.companyName)
                         .frame(alignment: .center)
                         .font(
                             .headline
@@ -33,14 +37,8 @@ struct TicketInformationView: View {
                 }
                 .frame(maxWidth: .infinity,
                        alignment: .leading)
-                OriginDestinationView(pointName: item.origin,
-                                      pointCode: item.originCode,
-                                      arrivalTime: item.arrivalTime,
-                                      ariivalDate: item.arrivalDate)
-                OriginDestinationView(pointName: item.destination,
-                                      pointCode: item.destinationCode,
-                                      arrivalTime: item.arrivalTime,
-                                      ariivalDate: item.arrivalDate)
+
+                TicketDetailsInfoView(model: model.ticketDetailsModel)
             }
             .padding(.horizontal, 40)
         }

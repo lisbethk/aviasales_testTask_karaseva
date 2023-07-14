@@ -1,5 +1,5 @@
 //
-//  Ticket.swift
+//  SearchRequestResponceModel.swift
 //  aviasales_testTask_karaseva
 //
 //  Created by Lisbeth Karasev on 12.07.2023.
@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct Ticket: Decodable {
+struct SearchRequestResponceModel: Decodable {
     let passengersCount: Int
     let origin: Origin
     let destination: Destination
-    let results: [Results]
+    let tickets: [Ticket]
 
     enum CodingKeys: String, CodingKey {
         case passengersCount = "passengers_count"
         case origin
         case destination
-        case results
+        case tickets = "results"
     }
 }
 
@@ -31,18 +31,18 @@ struct Destination: Decodable {
     let name: String
 }
 
-struct Results: Decodable {
+struct Ticket: Decodable {
     let id: String
     @DateValue<ISO8601Strategy> var departureDateTime: Date
     @DateValue<ISO8601Strategy> var arrivalDateTime: Date
     let price: Price
     let airline: String
-    let availableTicketsCound: Int
+    let availableTicketsCount: Int
 
     enum CodingKeys: String, CodingKey {
         case departureDateTime = "departure_date_time"
         case arrivalDateTime = "arrival_date_time"
-        case availableTicketsCound = "available_tickets_count"
+        case availableTicketsCount = "available_tickets_count"
         case price
         case airline
         case id
