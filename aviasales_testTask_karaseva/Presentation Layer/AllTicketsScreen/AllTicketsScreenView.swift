@@ -10,8 +10,6 @@ import SwiftUI
 struct AllTicketsScreenView: View {
 
     @ObservedObject var viewModel: AllTicketsScreenViewModel
-    @ObservedObject var loadingEror: String
-    @State var loaderHidden: Bool = true
 
     var body: some View {
 
@@ -39,8 +37,8 @@ struct AllTicketsScreenView: View {
 
                             LazyVStack(spacing: 15) {
                                 PriceCompanyView(viewModel: viewModel, item: item)
-                                OriginPointView(viewModel: viewModel, item: item)
-                                DestinationPointView(viewModel: viewModel, item: item)
+                                OriginDestinationView(pointName: item.origin, pointCode: item.originCode, arrivalTime: item.arrivalTime, ariivalDate: item.arrivalDate)
+                                OriginDestinationView(pointName: item.destination, pointCode: item.destinationCode, arrivalTime: item.arrivalTime, ariivalDate: item.arrivalDate)
                             }
                             .padding(20)
                             .toolbar {
@@ -49,7 +47,7 @@ struct AllTicketsScreenView: View {
                                         Text("\(item.origin) — \(item.destination)")
                                             .font(.headline
                                                 .weight(.semibold))
-                                        Text("\(item.departureDate), \(item.passengersCount)")
+                                        Text("\(item.longDepartureDate), \(item.passengersCount)")
                                             .font(.caption)
                                             .foregroundColor(Color(UIColor.secondaryLabel))
                                     }
@@ -107,51 +105,30 @@ struct PriceCompanyView: View {
     }
 }
 
-struct DestinationPointView: View {
-    var viewModel: AllTicketsScreenViewModel
-    var item: AllTicketsScreenModel.Item
+struct OriginDestinationView: View {
+    let pointName: String
+    let pointCode: String
+    let arrivalTime: String
+    let ariivalDate: String
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(item.destination)
+                Text(pointName)
                     .fontWeight(.semibold)
-                Text(item.destinationCode)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
+                Text(pointCode)
+                    .foregroundColor(
+                        Color(UIColor.secondaryLabel)
+                    )
                     .font(.subheadline)
             }
             Spacer()
             VStack(alignment: .trailing) {
-                Text(item.arrivalTime)
+                Text(arrivalTime)
                     .fontWeight(.semibold)
-                Text(item.arrivalDate)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
-                    .font(.subheadline)
-
-            }
-        }
-
-    }
-}
-
-struct OriginPointView: View {
-    var viewModel: AllTicketsScreenViewModel
-    var item: AllTicketsScreenModel.Item
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(item.origin)
-                    .fontWeight(.semibold)
-                Text(item.originCode)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
-                    .font(.subheadline)
-
-            }
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(item.departureTime)
-                    .fontWeight(.semibold)
-                Text(item.departureDate)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
+                Text(ariivalDate)
+                    .foregroundColor(
+                        Color(UIColor.secondaryLabel)
+                    )
                     .font(.subheadline)
             }
         }
@@ -181,14 +158,5 @@ struct LoaderView: View {
         ProgressView()
             .scaleEffect(scaleSize, anchor: .center)
             .progressViewStyle(CircularProgressViewStyle(tint: tintColor))
-    }
-}
-
-extension View {
-    @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
-        switch shouldHide {
-        case true: self.hidden()
-        case false: self
-        }
     }
 }

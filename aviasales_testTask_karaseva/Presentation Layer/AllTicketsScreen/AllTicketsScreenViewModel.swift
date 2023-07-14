@@ -43,11 +43,14 @@ protocol AllTicketsScreenViewModelOutputProtocol {
                     guard let departureDate = self?.dateFormatterService.monthAndDay(from: results.departureDateTime),
                           let departureTime = self?.dateFormatterService.hoursAndMinutes(from: results.departureDateTime),
                           let arrivalDate = self?.dateFormatterService.monthAndDay(from: results.arrivalDateTime),
-                          let arrivalTime = self?.dateFormatterService.hoursAndMinutes(from: results.arrivalDateTime) else { return }
+                          let arrivalTime = self?.dateFormatterService.hoursAndMinutes(from: results.arrivalDateTime),
+                          let longDepartureDate = self?.dateFormatterService.longMonthAndDay(from: results.departureDateTime),
+                          let departureWeekDay = self?.dateFormatterService.weekDay(from: results.departureDateTime),
+                            let arrivalWeekDay = self?.dateFormatterService.weekDay(from: results.arrivalDateTime) else { return }
 
                     let price = self?.priceFormatterService.getFormattedPrice(price: String(results.price.value))
 
-                    let item = AllTicketsScreenModel.Item(id: results.id, price: price ?? "No data", company: results.airline, numberOfTickets: results.availableTicketsCound, origin: info.origin.name, originCode: info.origin.iata, destination: info.destination.name, destinationCode: info.destination.iata, departureDate: departureDate, departureTime: departureTime, arrivalDate: arrivalDate, arrivalTime: arrivalTime, passengersCount: String("\(info.passengersCount) чел"))
+                    let item = AllTicketsScreenModel.Item(id: results.id, price: price ?? "No data", company: results.airline, numberOfTickets: results.availableTicketsCound, origin: info.origin.name, originCode: info.origin.iata, destination: info.destination.name, destinationCode: info.destination.iata, departureDate: departureDate + "," + " " + departureWeekDay, departureTime: departureTime, arrivalDate: arrivalDate + "," + " " + arrivalWeekDay, arrivalTime: arrivalTime, passengersCount: String("\(info.passengersCount) чел"), longDepartureDate: longDepartureDate)
 
                     items.append(item)
                 }

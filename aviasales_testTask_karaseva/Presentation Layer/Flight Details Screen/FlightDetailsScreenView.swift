@@ -18,16 +18,19 @@ struct FlightDetailsScreenView: View {
         ZStack {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea()
-                .navigationBarTitle("", displayMode: .inline)
+                .navigationBarTitle("",
+                                    displayMode: .inline)
 
             VStack {
-                PriceView(viewModel: viewModel, item: item)
+                PriceView(numberOfPassengers: item.numberOfPassengers,
+                          itemPrice: item.price
+                )
                     .frame(alignment: .top)
-                OridinDestinationAndTicketInfoView(viewModel: viewModel, item: item)
+                OridinDestinationAndTicketInfoView(item: item)
                     .frame(alignment: .top)
                 Spacer()
 
-                PurchaseTicketButtonView(item: item)
+                PurchaseTicketButtonView(itemPrice: item.price)
                     .frame(alignment: .bottom)
             }
         }
@@ -36,104 +39,76 @@ struct FlightDetailsScreenView: View {
 
 }
 
-struct SelectedDestinationPointView: View {
-    var viewModel: FlightDetailsScreenViewModel
-    var item: SelectedTicket
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(item.destination)
-                    .fontWeight(.semibold)
-                Text(item.destinationCode)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
-                    .font(.subheadline)
-            }
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(item.arrivalTime)
-                    .fontWeight(.semibold)
-                Text(item.arrivalDate)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
-                    .font(.subheadline)
-
-            }
-        }
-    }
-}
-
-struct SelectedOriginPointView: View {
-    var viewModel: FlightDetailsScreenViewModel
-    var item: SelectedTicket
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(item.origin)
-                    .fontWeight(.semibold)
-                Text(item.originCode)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
-                    .font(.subheadline)
-
-            }
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(item.departureTime)
-                    .fontWeight(.semibold)
-                Text(item.departureDate)
-                    .foregroundColor(Color(UIColor.secondaryLabel))
-                    .font(.subheadline)
-            }
-        }
-    }
-}
-
 
 struct PurchaseTicketButtonView: View {
     @State var showAlert = false
-    var item: SelectedTicket
+    let itemPrice: String
 
     var body: some View {
         ZStack {
             let orangeColor = UIColor(named: "MyOrange") ?? UIColor.systemOrange
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color(orangeColor))
-                .frame(maxWidth: .infinity, maxHeight: 50)
+                .foregroundColor(
+                    Color(orangeColor)
+                )
+                .frame(maxWidth: .infinity,
+                       maxHeight: 50)
                 .padding(10)
-            Button("Купить билет за \(item.price)") {
+            Button("Купить билет за \(itemPrice)") {
                 showAlert.toggle()
             }
-            .foregroundColor(Color(UIColor.white))
+            .foregroundColor(Color(UIColor.white)
+            )
             .font(
                 .headline
-                    .weight(.semibold))
+                    .weight(.semibold)
+            )
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Билет куплен за \(item.price)"),
+                Alert(title:
+                        Text("Билет куплен за \(itemPrice)"),
                       message: nil,
-                      dismissButton: .cancel(Text("Отлично")))
+                      dismissButton: .cancel(
+                        Text("Отлично")
+                      )
+                )
             }
         }
     }
 }
 
 struct TicketInformationView: View {
-    var viewModel: FlightDetailsScreenViewModel
     var item: SelectedTicket
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color(UIColor.secondarySystemGroupedBackground))
-                .frame(maxWidth: .infinity, minHeight: 160, maxHeight: 170, alignment: .center)
-                .padding(.horizontal, 20)
+                .foregroundColor(
+                    Color(UIColor.secondarySystemGroupedBackground)
+                )
+                .frame(maxWidth: .infinity,
+                       minHeight: 160,
+                       maxHeight: 170,
+                       alignment: .center)
+                .padding(.horizontal,
+                         20)
             VStack(spacing: 15) {
                 HStack(spacing: 10) {
                     Image(item.company)
                     Text(item.company)
                         .frame(alignment: .center)
                         .font(.headline
-                            .weight(.semibold))
+                            .weight(.semibold)
+                        )
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                SelectedOriginPointView(viewModel: viewModel, item: item)
-                SelectedDestinationPointView(viewModel: viewModel, item: item)
+                .frame(maxWidth: .infinity,
+                       alignment: .leading)
+                OriginDestinationView(pointName: item.origin,
+                                      pointCode: item.originCode,
+                                      arrivalTime: item.arrivalTime,
+                                      ariivalDate: item.arrivalDate)
+                OriginDestinationView(pointName: item.destination,
+                                      pointCode: item.destinationCode,
+                                      arrivalTime: item.arrivalTime,
+                                      ariivalDate: item.arrivalDate)
             }
             .padding(.horizontal, 40)
         }
@@ -141,37 +116,39 @@ struct TicketInformationView: View {
 }
 
 struct OridinDestinationAndTicketInfoView: View {
-    var viewModel: FlightDetailsScreenViewModel
     var item: SelectedTicket
     var body: some View {
         VStack() {
             
             Text("\(item.origin) — \(item.destination)")
-                .padding(.horizontal, 25)
-                .padding(.top, 20)
+                .padding(.horizontal,
+                         25)
+                .padding(.top,
+                         20)
                 .font(
                     .title3
                         .weight(.heavy)
                 )
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity,
+                       alignment: .leading)
             
-            TicketInformationView(viewModel: viewModel, item: item)
+            TicketInformationView(item: item)
             
         }
     }
 }
 
 struct PriceView: View {
-    var viewModel: FlightDetailsScreenViewModel
-    var item: SelectedTicket
+    let numberOfPassengers: String
+    let itemPrice: String
     var body: some View {
         VStack {
-            Text(item.price)
+            Text(itemPrice)
                 .font(
                     .largeTitle
                         .weight(.heavy)
                 )
-            Text("Лучшая цена за \(item.numberOfPassengers)")
+            Text("Лучшая цена за \(numberOfPassengers)")
                 .font(.caption)
         }
     }
