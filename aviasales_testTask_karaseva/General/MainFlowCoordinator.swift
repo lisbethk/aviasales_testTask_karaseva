@@ -33,7 +33,7 @@ final class MainFlowCoordinator {
 
 extension MainFlowCoordinator: AllTicketsScreenViewModelOutputProtocol {
     @MainActor func showSelectedTicket(item: AllTicketsScreenModel.Item) {
-        let ticket = SelectedTicket(id: item.id, price: item.price, company: item.company, origin: item.origin, originCode: item.originCode, destination: item.destination, destinationCode: item.destinationCode, departureDate: item.departureDate, departureTime: item.departureTime, arrivalDate: item.arrivalDate, arrivalTime: item.arrivalTime)
+        let ticket = SelectedTicket(id: item.id, price: item.price, company: item.company, origin: item.origin, originCode: item.originCode, destination: item.destination, destinationCode: item.destinationCode, departureDate: item.departureDate, departureTime: item.departureTime, arrivalDate: item.arrivalDate, arrivalTime: item.arrivalTime, numberOfPassengers: item.passengersCount)
         let viewController = flightDetailsScreenAssembly.assemble(input: ticket)
         rootViewController.pushViewController(viewController, animated: true)
     }

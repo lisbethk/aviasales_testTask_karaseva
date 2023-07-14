@@ -19,4 +19,5 @@ struct SelectedTicket {
         let departureTime: String
         let arrivalDate: String
         let arrivalTime: String
+    let numberOfPassengers: String
 }

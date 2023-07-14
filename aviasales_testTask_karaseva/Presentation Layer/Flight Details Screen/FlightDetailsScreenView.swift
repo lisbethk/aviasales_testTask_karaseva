@@ -16,36 +16,19 @@ struct FlightDetailsScreenView: View {
 
     var body: some View {
         ZStack {
-            Color(UIColor.secondarySystemBackground)
+            Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea()
                 .navigationBarTitle("", displayMode: .inline)
 
             VStack {
-                VStack {
-                    Text("17 830 P")
-                        .font(
-                            .largeTitle
-                                .weight(.heavy)
-                        )
-                    Text("Лучшая цена за 1 чел")
-                        .font(.caption)
-                }
+                PriceView(viewModel: viewModel, item: item)
+                    .frame(alignment: .top)
+                OridinDestinationAndTicketInfoView(viewModel: viewModel, item: item)
+                    .frame(alignment: .top)
+                Spacer()
 
-                VStack() {
-
-                    Text("Москва - Санкт-питербург")
-                        .padding(20)
-                        .font(
-                            .title3
-                                .weight(.bold)
-                        )
-                        .frame(maxWidth: .infinity, alignment: .leading)
-
-                    TicketInformationView(viewModel: viewModel, item: item)
-
-                }
-                PurchaseTicketButtonView()
-                    .frame(maxHeight: .infinity, alignment: .bottom)
+                PurchaseTicketButtonView(item: item)
+                    .frame(alignment: .bottom)
             }
         }
         
@@ -62,7 +45,7 @@ struct SelectedDestinationPointView: View {
                 Text(item.destination)
                     .fontWeight(.semibold)
                 Text(item.destinationCode)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color(UIColor.secondaryLabel))
                     .font(.subheadline)
             }
             Spacer()
@@ -70,12 +53,11 @@ struct SelectedDestinationPointView: View {
                 Text(item.arrivalTime)
                     .fontWeight(.semibold)
                 Text(item.arrivalDate)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color(UIColor.secondaryLabel))
                     .font(.subheadline)
 
             }
         }
-
     }
 }
 
@@ -88,7 +70,7 @@ struct SelectedOriginPointView: View {
                 Text(item.origin)
                     .fontWeight(.semibold)
                 Text(item.originCode)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color(UIColor.secondaryLabel))
                     .font(.subheadline)
 
             }
@@ -97,7 +79,7 @@ struct SelectedOriginPointView: View {
                 Text(item.departureTime)
                     .fontWeight(.semibold)
                 Text(item.departureDate)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color(UIColor.secondaryLabel))
                     .font(.subheadline)
             }
         }
@@ -107,21 +89,24 @@ struct SelectedOriginPointView: View {
 
 struct PurchaseTicketButtonView: View {
     @State var showAlert = false
+    var item: SelectedTicket
+
     var body: some View {
         ZStack {
+            let orangeColor = UIColor(named: "MyOrange") ?? UIColor.systemOrange
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color.orange)
+                .foregroundColor(Color(orangeColor))
                 .frame(maxWidth: .infinity, maxHeight: 50)
                 .padding(10)
-            Button("Купить билет за 17 830 P") {
+            Button("Купить билет за \(item.price)") {
                 showAlert.toggle()
             }
-            .foregroundColor(.white)
+            .foregroundColor(Color(UIColor.white))
             .font(
                 .headline
                     .weight(.semibold))
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Билет куплен за 17 830 P"),
+                Alert(title: Text("Билет куплен за \(item.price)"),
                       message: nil,
                       dismissButton: .cancel(Text("Отлично")))
             }
@@ -135,18 +120,59 @@ struct TicketInformationView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(.white)
-                .frame(width: 359, height: 170)
-            VStack(spacing: 10) {
-                HStack {
-                    Image("aeroflot")
-                    Text("Фэрофлот")
-                    Spacer()
+                .foregroundColor(Color(UIColor.secondarySystemGroupedBackground))
+                .frame(maxWidth: .infinity, minHeight: 160, maxHeight: 170, alignment: .center)
+                .padding(.horizontal, 20)
+            VStack(spacing: 15) {
+                HStack(spacing: 10) {
+                    Image(item.company)
+                    Text(item.company)
+                        .frame(alignment: .center)
+                        .font(.headline
+                            .weight(.semibold))
                 }
-                SelectedDestinationPointView(viewModel: viewModel, item: item)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 SelectedOriginPointView(viewModel: viewModel, item: item)
+                SelectedDestinationPointView(viewModel: viewModel, item: item)
             }
-            .padding(30)
+            .padding(.horizontal, 40)
+        }
+    }
+}
+
+struct OridinDestinationAndTicketInfoView: View {
+    var viewModel: FlightDetailsScreenViewModel
+    var item: SelectedTicket
+    var body: some View {
+        VStack() {
+            
+            Text("\(item.origin) — \(item.destination)")
+                .padding(.horizontal, 25)
+                .padding(.top, 20)
+                .font(
+                    .title3
+                        .weight(.heavy)
+                )
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            TicketInformationView(viewModel: viewModel, item: item)
+            
+        }
+    }
+}
+
+struct PriceView: View {
+    var viewModel: FlightDetailsScreenViewModel
+    var item: SelectedTicket
+    var body: some View {
+        VStack {
+            Text(item.price)
+                .font(
+                    .largeTitle
+                        .weight(.heavy)
+                )
+            Text("Лучшая цена за \(item.numberOfPassengers)")
+                .font(.caption)
         }
     }
 }
