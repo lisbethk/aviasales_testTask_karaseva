@@ -18,7 +18,10 @@ struct ISO8601Strategy: DateValueDecodableStrategy {
     }()
 
     static func decode(_ value: String) throws -> Date {
-        guard let formatterDate = dateFormatter.date(from: value) else { throw DateFormattingError.wrongFormat }
+        guard let formatterDate = dateFormatter.date(from: value) else
+        {
+            throw DateFormattingError.wrongFormat
+        }
         return formatterDate
     }
 }

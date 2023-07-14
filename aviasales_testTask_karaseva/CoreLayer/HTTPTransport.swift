@@ -13,6 +13,7 @@ protocol HTTPTransportProtocol {
 
 extension URLSession: HTTPTransportProtocol {
     func execute(request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        dataTask(with: request, completionHandler: completionHandler).resume()
+        dataTask(with: request,
+                 completionHandler: completionHandler).resume()
     }
 }

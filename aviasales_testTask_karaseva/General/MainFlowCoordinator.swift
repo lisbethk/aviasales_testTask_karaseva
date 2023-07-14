@@ -16,6 +16,7 @@ final class MainFlowCoordinator {
         dispatchQueue: dispatchQueue,
         httpTransport: URLSession.shared
     )
+    
     private lazy var searchService = SearchService(requestProcessor: requestProcessor)
     private lazy var allTicketsScreenAssembly = AllTicketsScreenAssembly(searchService: searchService)
     private lazy var flightDetailsScreenAssembly = FlightDetailsScreenAssembly()
@@ -33,8 +34,23 @@ final class MainFlowCoordinator {
 
 extension MainFlowCoordinator: AllTicketsScreenViewModelOutputProtocol {
     @MainActor func showSelectedTicket(item: AllTicketsScreenModel.Item) {
-        let ticket = SelectedTicket(id: item.id, price: item.price, company: item.company, origin: item.origin, originCode: item.originCode, destination: item.destination, destinationCode: item.destinationCode, departureDate: item.departureDate, departureTime: item.departureTime, arrivalDate: item.arrivalDate, arrivalTime: item.arrivalTime, numberOfPassengers: item.passengersCount)
+
+        let ticket = SelectedTicket(id: item.id,
+                                    price: item.price,
+                                    company: item.company,
+                                    origin: item.origin,
+                                    originCode: item.originCode,
+                                    destination: item.destination,
+                                    destinationCode: item.destinationCode,
+                                    departureDate: item.departureDate,
+                                    departureTime: item.departureTime,
+                                    arrivalDate: item.arrivalDate,
+                                    arrivalTime: item.arrivalTime,
+                                    numberOfPassengers: item.passengersCount)
+
         let viewController = flightDetailsScreenAssembly.assemble(input: ticket)
-        rootViewController.pushViewController(viewController, animated: true)
+
+        rootViewController.pushViewController(viewController,
+                                              animated: true)
     }
 }

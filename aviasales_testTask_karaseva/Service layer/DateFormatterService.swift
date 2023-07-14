@@ -22,7 +22,8 @@ final class DateFormatterService: DateFormatterServiceProtocol {
     func monthAndDay(from date: Date) -> String {
         dateFormatter.dateFormat = "d MMM"
         dateFormatter.locale = Locale(identifier: "ru_RU")
-        return dateFormatter.string(from: date).replacingOccurrences(of: ".", with: "")
+        return dateFormatter.string(from: date).replacingOccurrences(of: ".",
+                                                                     with: "")
     }
 
     func longMonthAndDay(from date: Date) -> String {

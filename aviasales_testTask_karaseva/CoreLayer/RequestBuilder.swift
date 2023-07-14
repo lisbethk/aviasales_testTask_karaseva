@@ -26,7 +26,8 @@ final class RequestBuilder: RequestBuilderProtocol {
         urlComponents.path = request.path
 
         urlComponents.queryItems = request.parameters.map {
-            URLQueryItem(name: $0.key, value: $0.value)
+            URLQueryItem(name: $0.key,
+                         value: $0.value)
         }
 
         guard let url = urlComponents.url else {

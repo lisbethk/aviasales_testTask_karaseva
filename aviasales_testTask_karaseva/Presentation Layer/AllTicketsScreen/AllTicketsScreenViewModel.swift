@@ -33,32 +33,11 @@ protocol AllTicketsScreenViewModelOutputProtocol {
     }
 
     func loadTickets() {
-        var items = [AllTicketsScreenModel.Item]()
         searchService.findTickets(origin: "MOW", destination: "LED") { [weak self] result in
             switch result {
             case .success(let info):
-                let tickets = info.results
-                tickets.forEach { results in
+                self?.handleSuccessLoading(info: info)
 
-                    guard let departureDate = self?.dateFormatterService.monthAndDay(from: results.departureDateTime),
-                          let departureTime = self?.dateFormatterService.hoursAndMinutes(from: results.departureDateTime),
-                          let arrivalDate = self?.dateFormatterService.monthAndDay(from: results.arrivalDateTime),
-                          let arrivalTime = self?.dateFormatterService.hoursAndMinutes(from: results.arrivalDateTime),
-                          let longDepartureDate = self?.dateFormatterService.longMonthAndDay(from: results.departureDateTime),
-                          let departureWeekDay = self?.dateFormatterService.weekDay(from: results.departureDateTime),
-                            let arrivalWeekDay = self?.dateFormatterService.weekDay(from: results.arrivalDateTime) else { return }
-
-                    let price = self?.priceFormatterService.getFormattedPrice(price: String(results.price.value))
-
-                    let item = AllTicketsScreenModel.Item(id: results.id, price: price ?? "No data", company: results.airline, numberOfTickets: results.availableTicketsCound, origin: info.origin.name, originCode: info.origin.iata, destination: info.destination.name, destinationCode: info.destination.iata, departureDate: departureDate + "," + " " + departureWeekDay, departureTime: departureTime, arrivalDate: arrivalDate + "," + " " + arrivalWeekDay, arrivalTime: arrivalTime, passengersCount: String("\(info.passengersCount) чел"), longDepartureDate: longDepartureDate)
-
-                    items.append(item)
-                }
-
-                guard let sortedTickets = self?.sortTickets(tickets: items) else { return }
-                DispatchQueue.main.async {
-                    self?.model = AllTicketsScreenModel(model: sortedTickets)
-                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -70,10 +49,55 @@ protocol AllTicketsScreenViewModelOutputProtocol {
             $0.price < $1.price
         }
         return sortedTickets
-
     }
 
     func showDetails(of item: AllTicketsScreenModel.Item) {
         output.showSelectedTicket(item: item)
+    }
+
+    func handleSuccessLoading(info: SearchRequest.Model) {
+        var items = [AllTicketsScreenModel.Item]()
+
+        let tickets = info.results
+        tickets.forEach { results in
+
+            let item = makeItem(results: results,
+                                info: info)
+            items.append(item)
+        }
+
+        let sortedTickets = sortTickets(tickets: items)
+
+        DispatchQueue.main.async {
+            self.model = AllTicketsScreenModel(model: sortedTickets)
+        }
+    }
+
+    func makeItem(results: Results, info: SearchRequest.Model) -> AllTicketsScreenModel.Item {
+        let departureDate = dateFormatterService.monthAndDay(from: results.departureDateTime)
+        let departureTime = dateFormatterService.hoursAndMinutes(from: results.departureDateTime)
+        let arrivalDate = dateFormatterService.monthAndDay(from: results.arrivalDateTime)
+        let arrivalTime = dateFormatterService.hoursAndMinutes(from: results.arrivalDateTime)
+        let longDepartureDate = dateFormatterService.longMonthAndDay(from: results.departureDateTime)
+        let departureWeekDay = dateFormatterService.weekDay(from: results.departureDateTime)
+        let arrivalWeekDay = dateFormatterService.weekDay(from: results.arrivalDateTime)
+
+        let price = self.priceFormatterService.getFormattedPrice(price: String(results.price.value))
+
+        let item = AllTicketsScreenModel.Item(id: results.id,
+                                              price: price,
+                                              company: results.airline,
+                                              numberOfTickets: results.availableTicketsCound,
+                                              origin: info.origin.name,
+                                              originCode: info.origin.iata,
+                                              destination: info.destination.name,
+                                              destinationCode: info.destination.iata,
+                                              departureDate: departureDate + "," + " " + departureWeekDay,
+                                              departureTime: departureTime,
+                                              arrivalDate: arrivalDate + "," + " " + arrivalWeekDay,
+                                              arrivalTime: arrivalTime,
+                                              passengersCount: String("\(info.passengersCount) чел"),
+                                              longDepartureDate: longDepartureDate)
+        return item
     }
 }

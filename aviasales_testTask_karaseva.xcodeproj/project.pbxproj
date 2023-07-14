@@ -36,6 +36,18 @@
 		74450ABD2A60462500683EBF /* FlightDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABC2A60462500683EBF /* FlightDateFormatter.swift */; };
 		74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */; };
 		74450AC12A6061A600683EBF /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450AC02A6061A600683EBF /* DateValue.swift */; };
+		7498784B2A61642600DC279E /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784A2A61642600DC279E /* ListCellView.swift */; };
+		7498784D2A61646000DC279E /* OriginDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784C2A61646000DC279E /* OriginDestinationView.swift */; };
+		7498784F2A61647800DC279E /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498784E2A61647800DC279E /* BadgeView.swift */; };
+		749878512A61649E00DC279E /* TicketListToolBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878502A61649E00DC279E /* TicketListToolBarItemView.swift */; };
+		749878532A6164DB00DC279E /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878522A6164DB00DC279E /* LoaderView.swift */; };
+		749878552A6164FB00DC279E /* PriceCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878542A6164FB00DC279E /* PriceCompanyView.swift */; };
+		749878572A61651200DC279E /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878562A61651200DC279E /* BackgroundColorView.swift */; };
+		749878592A61653100DC279E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878582A61653100DC279E /* MainView.swift */; };
+		7498785C2A61656600DC279E /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498785B2A61656600DC279E /* PriceView.swift */; };
+		7498785E2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498785D2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift */; };
+		749878602A6165A000DC279E /* TicketInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498785F2A6165A000DC279E /* TicketInformationView.swift */; };
+		749878622A6165BE00DC279E /* PurchaseTicketBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878612A6165BE00DC279E /* PurchaseTicketBottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +101,18 @@
 		74450ABC2A60462500683EBF /* FlightDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateFormatter.swift; sourceTree = "<group>"; };
 		74450ABE2A604F1C00683EBF /* PriceFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterService.swift; sourceTree = "<group>"; };
 		74450AC02A6061A600683EBF /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		7498784A2A61642600DC279E /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
+		7498784C2A61646000DC279E /* OriginDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginDestinationView.swift; sourceTree = "<group>"; };
+		7498784E2A61647800DC279E /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		749878502A61649E00DC279E /* TicketListToolBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListToolBarItemView.swift; sourceTree = "<group>"; };
+		749878522A6164DB00DC279E /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		749878542A6164FB00DC279E /* PriceCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCompanyView.swift; sourceTree = "<group>"; };
+		749878562A61651200DC279E /* BackgroundColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorView.swift; sourceTree = "<group>"; };
+		749878582A61653100DC279E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7498785B2A61656600DC279E /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
+		7498785D2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OridinDestinationAndTicketInfoView.swift; sourceTree = "<group>"; };
+		7498785F2A6165A000DC279E /* TicketInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInformationView.swift; sourceTree = "<group>"; };
+		749878612A6165BE00DC279E /* PurchaseTicketBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTicketBottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +192,7 @@
 		74450A8C2A5ECB9D00683EBF /* AllTicketsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				749878492A61640B00DC279E /* Views */,
 				74450A8D2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift */,
 				74450A8F2A5ECBC900683EBF /* AllTicketsScreenModel.swift */,
 				74450A912A5ECBE800683EBF /* AllTicketsScreenView.swift */,
@@ -179,6 +204,7 @@
 		74450A952A5ECC2400683EBF /* Flight Details Screen */ = {
 			isa = PBXGroup;
 			children = (
+				7498785A2A61655600DC279E /* Views */,
 				74450A962A5ECC3B00683EBF /* FlightDetailsScreenView.swift */,
 				74450AA42A5EEB8700683EBF /* FlightDetailsScreenViewModel.swift */,
 				74450AA62A5EEC0E00683EBF /* FlightDetailsScreeenModel.swift */,
@@ -233,6 +259,32 @@
 				74450A652A5ECAD000683EBF /* LaunchScreen.storyboard */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		749878492A61640B00DC279E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7498784A2A61642600DC279E /* ListCellView.swift */,
+				7498784C2A61646000DC279E /* OriginDestinationView.swift */,
+				7498784E2A61647800DC279E /* BadgeView.swift */,
+				749878502A61649E00DC279E /* TicketListToolBarItemView.swift */,
+				749878522A6164DB00DC279E /* LoaderView.swift */,
+				749878542A6164FB00DC279E /* PriceCompanyView.swift */,
+				749878562A61651200DC279E /* BackgroundColorView.swift */,
+				749878582A61653100DC279E /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7498785A2A61655600DC279E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7498785B2A61656600DC279E /* PriceView.swift */,
+				7498785D2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift */,
+				7498785F2A6165A000DC279E /* TicketInformationView.swift */,
+				749878612A6165BE00DC279E /* PurchaseTicketBottomView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,26 +421,38 @@
 				74450AA92A5F05B700683EBF /* FlightDetailsScreenAssembly.swift in Sources */,
 				74450A902A5ECBC900683EBF /* AllTicketsScreenModel.swift in Sources */,
 				74450AB02A5F266700683EBF /* SearchRequest.swift in Sources */,
+				749878532A6164DB00DC279E /* LoaderView.swift in Sources */,
 				74450A942A5ECC0600683EBF /* AllTicketsScreenAssembly.swift in Sources */,
 				74450AA52A5EEB8700683EBF /* FlightDetailsScreenViewModel.swift in Sources */,
 				74450AB82A5F3C6E00683EBF /* Ticket.swift in Sources */,
+				749878622A6165BE00DC279E /* PurchaseTicketBottomView.swift in Sources */,
 				74450AA72A5EEC0E00683EBF /* FlightDetailsScreeenModel.swift in Sources */,
+				749878592A61653100DC279E /* MainView.swift in Sources */,
 				74450AB62A5F2B9500683EBF /* DataParser.swift in Sources */,
+				7498785E2A61657A00DC279E /* OridinDestinationAndTicketInfoView.swift in Sources */,
 				74450AB42A5F29CA00683EBF /* RequestProcessor.swift in Sources */,
 				74450A5B2A5ECACE00683EBF /* AppDelegate.swift in Sources */,
 				74450A922A5ECBE800683EBF /* AllTicketsScreenView.swift in Sources */,
+				7498785C2A61656600DC279E /* PriceView.swift in Sources */,
+				749878602A6165A000DC279E /* TicketInformationView.swift in Sources */,
 				74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */,
+				749878552A6164FB00DC279E /* PriceCompanyView.swift in Sources */,
 				74450A5D2A5ECACE00683EBF /* SceneDelegate.swift in Sources */,
 				74450AAD2A5F253000683EBF /* RequestProtocol.swift in Sources */,
+				7498784F2A61647800DC279E /* BadgeView.swift in Sources */,
 				74450A9A2A5ECC6A00683EBF /* SearchService.swift in Sources */,
 				74450AA22A5ECCBF00683EBF /* HTTPTransport.swift in Sources */,
+				749878572A61651200DC279E /* BackgroundColorView.swift in Sources */,
 				74450ABD2A60462500683EBF /* FlightDateFormatter.swift in Sources */,
 				74450A8E2A5ECBAD00683EBF /* AllTicketsScreenViewModel.swift in Sources */,
 				74450AB22A5F275D00683EBF /* RequestBuilder.swift in Sources */,
 				74450A8B2A5ECB8000683EBF /* MainFlowCoordinator.swift in Sources */,
 				74450AC12A6061A600683EBF /* DateValue.swift in Sources */,
+				749878512A61649E00DC279E /* TicketListToolBarItemView.swift in Sources */,
 				74450A9C2A5ECC8000683EBF /* DispatchQueue.swift in Sources */,
+				7498784D2A61646000DC279E /* OriginDestinationView.swift in Sources */,
 				74450A972A5ECC3B00683EBF /* FlightDetailsScreenView.swift in Sources */,
+				7498784B2A61642600DC279E /* ListCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,8 +21,12 @@ final class PriceFormatterService: PriceFormatterServiceProtocol {
         formatter.locale = Locale(identifier: "ru_RU")
 
         guard let numbers = Int(price) else {return ""}
-        guard let formattedAmount = formatter.string(from: NSNumber(value: numbers)) else {return ""}
+        guard let formattedAmount = formatter.string(
+            from: NSNumber(value: numbers)
+        ) else {
+            return ""
 
+        }
         return formattedAmount
     }
 }

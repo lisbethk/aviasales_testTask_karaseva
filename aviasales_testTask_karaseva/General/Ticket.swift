@@ -46,7 +46,6 @@ struct Results: Decodable {
         case price
         case airline
         case id
-
     }
 }
 

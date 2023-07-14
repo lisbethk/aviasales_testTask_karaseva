@@ -13,7 +13,9 @@ protocol DispatchQueueProtocol {
 
 extension DispatchQueue: DispatchQueueProtocol {
     func async(execute work: @escaping () -> Void) {
-        async(group: nil, qos: .background, flags: []) {
+        async(group: nil,
+              qos: .background,
+              flags: []) {
             work()
         }
     }
