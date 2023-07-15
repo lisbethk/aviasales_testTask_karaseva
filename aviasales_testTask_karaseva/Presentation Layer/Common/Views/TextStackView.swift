@@ -18,14 +18,14 @@ struct TextStackView: View {
     let model: TextStackModel
 
     var body: some View {
-        VStack(alignment: model.alignment) {
-                Text(model.title)
-                    .fontWeight(.semibold)
-                Text(model.subtitle)
-                    .foregroundColor(
-                        Color(UIColor.secondaryLabel)
-                    )
-                    .font(.subheadline)
-            }
+        VStack(alignment: model.alignment, spacing: 2) {
+            Text(model.title)
+                .fontWeight(.semibold)
+            Text(model.subtitle)
+                .foregroundColor(
+                    Color(UIColor.secondaryLabel)
+                )
+                .font(.subheadline)
+        }
     }
 }

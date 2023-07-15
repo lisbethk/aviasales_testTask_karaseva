@@ -51,7 +51,7 @@ final class TicketListModelFactory: TicketListModelFactoryProtocol {
             )},
             navigationTitle: "Все билеты",
             headerModel: .init(
-                title: "\(model.origin.name) \(model.destination.name)",
+                title: "\(model.origin.name) — \(model.destination.name)",
                 subtitle: "\(departureLongDate), \(model.passengersCount) чел"
             )
         )
@@ -65,8 +65,8 @@ final class TicketListModelFactory: TicketListModelFactoryProtocol {
         tapHandler: @escaping (Ticket) -> ()
     ) -> TicketListCellModel {
 
-        let ticketPrice = priceFormatter.getFormattedPrice(price: String(ticket.price.value))
-        let warningTitle = "Осталось \(ticket.availableTicketsCount) билетов по этой цене"
+        let ticketPrice = priceFormatter.getFormattedPrice(price: String(ticket.price.value), currency: ticket.price.currency)
+        let warningTitle = ticket.availableTicketsCount < 11 ? "Осталось \(ticket.availableTicketsCount) билетов по этой цене" : nil
 
         let badgeModel = isFirst ? BadgeModel(text: "Самый дешевый") : nil
 

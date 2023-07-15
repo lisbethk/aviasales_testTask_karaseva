@@ -16,7 +16,12 @@ protocol DateFormatterServiceProtocol {
 
 final class DateFormatterService: DateFormatterServiceProtocol {
 
-    let dateFormatter = DateFormatter()
+    private let dateFormatter: DateFormatter
+
+
+    init(dateFormatter: DateFormatter) {
+        self.dateFormatter = dateFormatter
+    }
 
 //    - MARK: по международному стандарту из кода можно получить только "сент", а не "сен", очень много говнокода ради этого
     func monthAndDay(from date: Date) -> String {

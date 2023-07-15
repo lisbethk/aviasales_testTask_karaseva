@@ -21,7 +21,7 @@ struct TicketInformationView: View {
                     Color(UIColor.secondarySystemGroupedBackground)
                 )
                 .frame(maxWidth: .infinity,
-                       maxHeight: 180,
+                       maxHeight: 160,
                        alignment: .center)
                 .padding(.horizontal,
                          20)
@@ -32,7 +32,7 @@ struct TicketInformationView: View {
                         .frame(alignment: .center)
                         .font(
                             .headline
-                            .weight(.semibold)
+                                .weight(.semibold)
                         )
                 }
                 .frame(maxWidth: .infinity,
@@ -41,6 +41,7 @@ struct TicketInformationView: View {
                 TicketDetailsInfoView(model: model.ticketDetailsModel)
             }
             .padding(.horizontal, 40)
+            .frame(height: 160)
         }
     }
 }

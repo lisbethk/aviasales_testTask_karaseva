@@ -5,7 +5,6 @@
 //  Created by Lisbeth Karasev on 12.07.2023.
 //
 
-import Foundation
 import SwiftUI
 
 struct TicketDetailsModel {
@@ -24,13 +23,11 @@ struct TicketDetailsView: View {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea()
 
-            // зачем
-                .navigationBarTitle("",
-                                    displayMode: .inline)
             if let model = viewModel.model {
                 VStack {
                     TicketDetailsHeaderView(model: model.headerModel)
                         .frame(alignment: .top)
+                        .padding(.vertical, 10)
                     VStack() {
                         Text(model.title)
                             .padding(.horizontal, 25)
@@ -40,12 +37,9 @@ struct TicketDetailsView: View {
                                    alignment: .leading)
                         TicketInformationView(model: model.informationModel)
                     }
-                    .frame(alignment: .top)
-
                     Spacer()
-
                     TicketDetailsButtonView(model: model.buttonModel)
-                        .frame(alignment: .bottom)
+                        .padding(.bottom, 10)
                 }
             }
         }

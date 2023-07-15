@@ -20,7 +20,7 @@ struct TicketDetailsHeaderView: View {
             Text(model.title)
                 .font(
                     .largeTitle
-                    .weight(.heavy)
+                        .weight(.heavy)
                 )
             Text(model.subtitle)
                 .font(.caption)

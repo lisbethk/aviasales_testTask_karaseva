@@ -12,21 +12,22 @@ protocol TicketDetailsInfoModelFactoryProtocol {
 }
 
 final class TicketDetailsInfoModelFactory: TicketDetailsInfoModelFactoryProtocol {
-
+    
     private let dateFormatterService: DateFormatterServiceProtocol
-
+    
     init(dateFormatterService: DateFormatterServiceProtocol) {
         self.dateFormatterService = dateFormatterService
     }
-
+    
     func ticketListCellModel(ticket: Ticket, origin: Origin, destination: Destination) -> TicketDetailsInfoModel {
-
-        let departureTime = dateFormatterService.monthAndDay(from: ticket.departureDateTime)
-        let departureDate = dateFormatterService.hoursAndMinutes(from: ticket.departureDateTime)
+        
+        let departureDate = dateFormatterService.monthAndDay(from: ticket.departureDateTime)
+        let departureTime = dateFormatterService.hoursAndMinutes(from: ticket.departureDateTime)
         let arrivalTime = dateFormatterService.hoursAndMinutes(from: ticket.arrivalDateTime)
         let arrivalDate = dateFormatterService.monthAndDay(from: ticket.arrivalDateTime)
-
-
+        let departureWeekDay = dateFormatterService.weekDay(from: ticket.departureDateTime)
+        let arrivalWeekDay = dateFormatterService.weekDay(from: ticket.arrivalDateTime)
+        
         return .init(
             topLeftStackModel: .init(
                 title: origin.name,
@@ -35,7 +36,7 @@ final class TicketDetailsInfoModelFactory: TicketDetailsInfoModelFactoryProtocol
             ),
             topRightStackModel: .init(
                 title: departureTime,
-                subtitle: departureDate,
+                subtitle: departureDate + ", " + departureWeekDay,
                 alignment: .trailing
             ),
             bottomLeftStackModel: .init(
@@ -45,7 +46,7 @@ final class TicketDetailsInfoModelFactory: TicketDetailsInfoModelFactoryProtocol
             ),
             bottomRightStackModel: .init(
                 title: arrivalTime,
-                subtitle: arrivalDate,
+                subtitle: arrivalDate + ", " + arrivalWeekDay,
                 alignment: .trailing
             )
         )

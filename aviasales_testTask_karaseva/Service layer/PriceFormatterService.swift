@@ -9,24 +9,28 @@ import Foundation
 import UIKit
 
 protocol PriceFormatterServiceProtocol {
-    func getFormattedPrice(price: String) -> String
+    func getFormattedPrice(price: String, currency: String) -> String
 }
 
 final class PriceFormatterService: PriceFormatterServiceProtocol {
-    func getFormattedPrice(price: String) -> String {
-
+    func getFormattedPrice(price: String, currency: String) -> String {
+        
         let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
         formatter.maximumFractionDigits = 0
+        
         formatter.locale = Locale(identifier: "ru_RU")
-
+        formatter.numberStyle = .currency
+        
         guard let numbers = Int(price) else {return ""}
         guard let formattedAmount = formatter.string(
             from: NSNumber(value: numbers)
         ) else {
             return ""
-
+            
         }
         return formattedAmount
     }
 }
+
+
+//        formatter.numberStyle = .currency

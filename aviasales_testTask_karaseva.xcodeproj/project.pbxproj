@@ -11,9 +11,7 @@
 		74450A5D2A5ECACE00683EBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A5C2A5ECACE00683EBF /* SceneDelegate.swift */; };
 		74450A642A5ECAD000683EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74450A632A5ECAD000683EBF /* Assets.xcassets */; };
 		74450A672A5ECAD000683EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74450A652A5ECAD000683EBF /* LaunchScreen.storyboard */; };
-		74450A722A5ECAD000683EBF /* SearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A712A5ECAD000683EBF /* SearchServiceTest.swift */; };
-		74450A7C2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A7B2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift */; };
-		74450A7E2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A7D2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift */; };
+		74450A722A5ECAD000683EBF /* RequestProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A712A5ECAD000683EBF /* RequestProcessorTest.swift */; };
 		74450A8B2A5ECB8000683EBF /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */; };
 		74450A8E2A5ECBAD00683EBF /* TicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A8D2A5ECBAD00683EBF /* TicketListViewModel.swift */; };
 		74450A922A5ECBE800683EBF /* TicketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74450A912A5ECBE800683EBF /* TicketListView.swift */; };
@@ -51,6 +49,9 @@
 		7498787A2A61DFFC00DC279E /* TicketListModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878792A61DFFC00DC279E /* TicketListModelFactory.swift */; };
 		7498787C2A61F19800DC279E /* TicketDetailsModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498787B2A61F19800DC279E /* TicketDetailsModelFactory.swift */; };
 		7498787F2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498787E2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift */; };
+		749878812A627BE000DC279E /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878802A627BE000DC279E /* ApplicationAssembly.swift */; };
+		749878862A62928C00DC279E /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878852A62928C00DC279E /* RequestMock.swift */; };
+		749878882A62931700DC279E /* ErrorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878872A62931700DC279E /* ErrorMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +79,8 @@
 		74450A662A5ECAD000683EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74450A682A5ECAD000683EBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74450A6D2A5ECAD000683EBF /* aviasales_testTask_karasevaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aviasales_testTask_karasevaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		74450A712A5ECAD000683EBF /* SearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceTest.swift; sourceTree = "<group>"; };
+		74450A712A5ECAD000683EBF /* RequestProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessorTest.swift; sourceTree = "<group>"; };
 		74450A772A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aviasales_testTask_karasevaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		74450A7B2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aviasales_testTask_karasevaUITests.swift; sourceTree = "<group>"; };
-		74450A7D2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aviasales_testTask_karasevaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		74450A8D2A5ECBAD00683EBF /* TicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewModel.swift; sourceTree = "<group>"; };
 		74450A912A5ECBE800683EBF /* TicketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListView.swift; sourceTree = "<group>"; };
@@ -119,6 +118,9 @@
 		749878792A61DFFC00DC279E /* TicketListModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListModelFactory.swift; sourceTree = "<group>"; };
 		7498787B2A61F19800DC279E /* TicketDetailsModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsModelFactory.swift; sourceTree = "<group>"; };
 		7498787E2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsInfoModelFactory.swift; sourceTree = "<group>"; };
+		749878802A627BE000DC279E /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		749878852A62928C00DC279E /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
+		749878872A62931700DC279E /* ErrorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,6 @@
 		74450A4E2A5ECACE00683EBF = {
 			isa = PBXGroup;
 			children = (
-				74450A7A2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests */,
 				74450A702A5ECAD000683EBF /* aviasales_testTask_karasevaTests */,
 				74450A592A5ECACE00683EBF /* aviasales_testTask_karaseva */,
 				74450A582A5ECACE00683EBF /* Products */,
@@ -182,21 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				7498786A2A6195A600DC279E /* Mocks */,
-				74450A712A5ECAD000683EBF /* SearchServiceTest.swift */,
+				74450A712A5ECAD000683EBF /* RequestProcessorTest.swift */,
 			);
 			path = aviasales_testTask_karasevaTests;
 			sourceTree = "<group>";
 		};
-		74450A7A2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				74450A7B2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift */,
-				74450A7D2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift */,
-			);
-			path = aviasales_testTask_karasevaUITests;
-			sourceTree = "<group>";
-		};
-		74450A8C2A5ECB9D00683EBF /* AllTicketsScreen */ = {
+		74450A8C2A5ECB9D00683EBF /* TicketList */ = {
 			isa = PBXGroup;
 			children = (
 				749878492A61640B00DC279E /* Views */,
@@ -205,10 +197,10 @@
 				74450A912A5ECBE800683EBF /* TicketListView.swift */,
 				749878792A61DFFC00DC279E /* TicketListModelFactory.swift */,
 			);
-			path = AllTicketsScreen;
+			path = TicketList;
 			sourceTree = "<group>";
 		};
-		74450A952A5ECC2400683EBF /* Flight Details Screen */ = {
+		74450A952A5ECC2400683EBF /* Ticket details */ = {
 			isa = PBXGroup;
 			children = (
 				7498785A2A61655600DC279E /* Views */,
@@ -217,13 +209,12 @@
 				74450AA82A5F05B700683EBF /* TicketDetailsAssembly.swift */,
 				7498787B2A61F19800DC279E /* TicketDetailsModelFactory.swift */,
 			);
-			path = "Flight Details Screen";
+			path = "Ticket details";
 			sourceTree = "<group>";
 		};
 		74450A982A5ECC5900683EBF /* Service layer */ = {
 			isa = PBXGroup;
 			children = (
-				74450AB72A5F3C6E00683EBF /* SearchRequestResponceModel.swift */,
 				74450A992A5ECC6A00683EBF /* SearchService.swift */,
 				74450AAF2A5F266700683EBF /* SearchRequest.swift */,
 				74450ABA2A601FD100683EBF /* DateFormatterService.swift */,
@@ -237,8 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				749878772A61CF4B00DC279E /* Common */,
-				74450A952A5ECC2400683EBF /* Flight Details Screen */,
-				74450A8C2A5ECB9D00683EBF /* AllTicketsScreen */,
+				74450A952A5ECC2400683EBF /* Ticket details */,
+				74450A8C2A5ECB9D00683EBF /* TicketList */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -261,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				74450A8A2A5ECB8000683EBF /* MainFlowCoordinator.swift */,
+				749878802A627BE000DC279E /* ApplicationAssembly.swift */,
 				74450A5A2A5ECACE00683EBF /* AppDelegate.swift */,
 				74450A5C2A5ECACE00683EBF /* SceneDelegate.swift */,
 				74450A632A5ECAD000683EBF /* Assets.xcassets */,
@@ -298,6 +290,8 @@
 				7498786D2A6197AA00DC279E /* DataParserMock.swift */,
 				7498786F2A6197B400DC279E /* DispatchQueueMock.swift */,
 				749878712A6197BD00DC279E /* HTTPTransportMock.swift */,
+				749878852A62928C00DC279E /* RequestMock.swift */,
+				749878872A62931700DC279E /* ErrorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -305,6 +299,7 @@
 		749878772A61CF4B00DC279E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				749878842A62812800DC279E /* Models */,
 				7498787D2A61F2E100DC279E /* Factories */,
 				749878782A61CF5400DC279E /* Views */,
 			);
@@ -326,6 +321,14 @@
 				7498787E2A61F2FD00DC279E /* TicketDetailsInfoModelFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		749878842A62812800DC279E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74450AB72A5F3C6E00683EBF /* SearchRequestResponceModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,6 +477,7 @@
 				74450AB42A5F29CA00683EBF /* RequestProcessor.swift in Sources */,
 				74450A5B2A5ECACE00683EBF /* AppDelegate.swift in Sources */,
 				74450A922A5ECBE800683EBF /* TicketListView.swift in Sources */,
+				749878812A627BE000DC279E /* ApplicationAssembly.swift in Sources */,
 				7498785C2A61656600DC279E /* TicketDetailsHeaderView.swift in Sources */,
 				749878602A6165A000DC279E /* TicketInformationView.swift in Sources */,
 				74450ABF2A604F1C00683EBF /* PriceFormatterService.swift in Sources */,
@@ -501,10 +505,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7498786E2A6197AA00DC279E /* DataParserMock.swift in Sources */,
+				749878862A62928C00DC279E /* RequestMock.swift in Sources */,
 				749878702A6197B400DC279E /* DispatchQueueMock.swift in Sources */,
-				74450A722A5ECAD000683EBF /* SearchServiceTest.swift in Sources */,
+				74450A722A5ECAD000683EBF /* RequestProcessorTest.swift in Sources */,
 				749878722A6197BD00DC279E /* HTTPTransportMock.swift in Sources */,
 				7498786C2A61979F00DC279E /* RequestBuilderMock.swift in Sources */,
+				749878882A62931700DC279E /* ErrorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,8 +518,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74450A7C2A5ECAD000683EBF /* aviasales_testTask_karasevaUITests.swift in Sources */,
-				74450A7E2A5ECAD000683EBF /* aviasales_testTask_karasevaUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,24 +13,21 @@ struct TicketListHeaderModel {
 }
 
 struct TicketListHeaderView: View {
-
+    
     let model: TicketListHeaderModel
-
+    
     var body: some View {
         VStack {
             Text(model.title)
                 .font(
                     .headline
-                    .weight(.semibold)
+                        .weight(.semibold)
                 )
-                .accessibilityIdentifier("OriginDestinationLabel")
             Text(model.subtitle)
                 .font(.caption)
                 .foregroundColor(
                     Color(UIColor.secondaryLabel)
                 )
-                .accessibilityIdentifier("DateAndPassengersLabel")
         }
-        .accessibilityIdentifier("TicketListToolBar")
     }
 }

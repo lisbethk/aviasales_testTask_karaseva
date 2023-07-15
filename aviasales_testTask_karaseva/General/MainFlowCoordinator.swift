@@ -7,39 +7,24 @@
 
 import UIKit
 
-final class MainFlowCoordinator {
+protocol MainFlowCoordinatorProtocol {
+    func start(from window: UIWindow)
+}
 
-    private let dispatchQueue = DispatchQueue.global()
-    private lazy var requestProcessor = RequestProcessor(
-        requestBuilder: RequestBuilder(),
-        dataParser: JSONDecoder(),
-        dispatchQueue: dispatchQueue,
-        httpTransport: URLSession.shared
-    )
-    private lazy var dateFormatterService = DateFormatterService()
-    private lazy var priceFormatter = PriceFormatterService()
-    private lazy var ticketDetailsInfoModelFactory = TicketDetailsInfoModelFactory(dateFormatterService: dateFormatterService)
-    private lazy var ticketListModelFactory = TicketListModelFactory(
-        dateFormatterService: dateFormatterService,
-        priceFormatter: priceFormatter,
-        ticketDetailsInfoModelFactory: ticketDetailsInfoModelFactory
-    )
+final class MainFlowCoordinator: MainFlowCoordinatorProtocol {
 
-    private lazy var ticketDetailsModelFactory = TicketDetailsModelFactory(
-        ticketDetailsInfoModelFactory: ticketDetailsInfoModelFactory,
-        priceFormatter: priceFormatter
-    )
-    private lazy var searchService = SearchService(requestProcessor: requestProcessor)
-    private lazy var allTicketsScreenAssembly = TicketListAssembly(
-        searchService: searchService,
-        ticketListModelFactory: ticketListModelFactory
-    )
-    private lazy var ticketDetailsAssembly = TicketDetailsAssembly(ticketDetailsModelFactory: ticketDetailsModelFactory)
-
+    private let ticketListAssembly: TicketListAssemblyProtocol
+    private let ticketDetailsAssembly: TicketDetailsAssemblyProtocol
     private var rootViewController = UINavigationController()
 
-    @MainActor func start(from window: UIWindow) {
-        let rootViewController = allTicketsScreenAssembly.assemble(output: self)
+    init(ticketListAssembly: TicketListAssemblyProtocol, ticketDetailsAssembly: TicketDetailsAssemblyProtocol, rootViewController: UINavigationController = UINavigationController()) {
+        self.ticketListAssembly = ticketListAssembly
+        self.ticketDetailsAssembly = ticketDetailsAssembly
+        self.rootViewController = rootViewController
+    }
+
+    func start(from window: UIWindow) {
+        let rootViewController = ticketListAssembly.assemble(output: self)
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
         self.rootViewController = rootViewController

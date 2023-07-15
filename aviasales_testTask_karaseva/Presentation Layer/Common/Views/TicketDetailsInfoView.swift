@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
 
 struct TicketDetailsInfoModel {
     let topLeftStackModel: TextStackModel
@@ -18,13 +17,12 @@ struct TicketDetailsInfoModel {
 struct TicketDetailsInfoView: View {
     let model: TicketDetailsInfoModel
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
             makeStack(topViewModel: model.topLeftStackModel, bottomViewModel: model.topRightStackModel)
-            Spacer()
             makeStack(topViewModel: model.bottomLeftStackModel, bottomViewModel: model.bottomRightStackModel)
         }
     }
-
+    
     private func makeStack(topViewModel: TextStackModel, bottomViewModel: TextStackModel) -> some View {
         HStack {
             TextStackView(model: topViewModel)

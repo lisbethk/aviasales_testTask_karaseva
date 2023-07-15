@@ -17,21 +17,20 @@ struct TicketListCellHeaderView: View {
     let model: TicketListCellHeaderModel
     var body: some View {
 
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
             HStack {
                 Text(model.price)
                     .font(.title2
-                    .weight(.semibold)
+                        .weight(.semibold)
                     )
                     .foregroundColor(
                         Color(UIColor.systemBlue)
                     )
-                    .accessibilityIdentifier("PriceLabel")
                 Spacer()
                 Image(model.companyName)
-                    .frame(width: 26,
-                           height: 26)
-                    .accessibilityIdentifier("CompanyIcon")
+                    .resizable(resizingMode: .stretch)
+                    .frame(width: 26, height: 26)
+                    .fixedSize()
             }
             if let title = model.warningTitle {
                 Text(title)
@@ -39,7 +38,6 @@ struct TicketListCellHeaderView: View {
                     .foregroundColor(
                         Color(UIColor.systemRed)
                     )
-                    .accessibilityIdentifier("NumberOfTicketsLabel")
             }
         }
     }

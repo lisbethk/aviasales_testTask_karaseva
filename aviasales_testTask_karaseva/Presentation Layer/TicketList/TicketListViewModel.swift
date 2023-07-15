@@ -38,12 +38,14 @@ final class TicketListViewModel: ObservableObject {
         self.output = output
         self.searchService = searchService
         self.ticketListModelFactory = ticketListModelFactory
-        loadTickets()
+        viewDidLoad()
     }
 
-    // view did load
-
     func loadTickets() {
+        viewDidLoad()
+    }
+
+    private func viewDidLoad() {
         state = .loading
         searchService.findTickets(origin: "MOW", destination: "LED") { [weak self] result in
             switch result {
@@ -58,18 +60,14 @@ final class TicketListViewModel: ObservableObject {
         }
     }
 
-    // private
-
-    func sortTickets(tickets: [Ticket]) -> [Ticket] {
+    private func sortTickets(tickets: [Ticket]) -> [Ticket] {
         let sortedTickets = tickets.sorted {
             $0.price.value < $1.price.value
         }
         return sortedTickets
     }
 
-    // private
-
-    func handleSuccessLoading(info: SearchRequest.Model) {
+    private func handleSuccessLoading(info: SearchRequest.Model) {
         let model = ticketListModelFactory.makeTicketListViewModel(model: info) { [weak self] ticket in
             self?.output.showDetails(
                 ticket: ticket,

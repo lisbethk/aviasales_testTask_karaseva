@@ -14,12 +14,12 @@ struct TicketListScrollModel {
 }
 
 struct TicketListScrollView: View {
+
     let model: TicketListScrollModel
 
     var body: some View {
 
         ZStack {
-
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea()
 
@@ -40,6 +40,5 @@ struct TicketListScrollView: View {
                 }
             }
         }
-
     }
 }

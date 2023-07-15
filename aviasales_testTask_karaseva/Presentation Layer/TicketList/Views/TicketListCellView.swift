@@ -16,11 +16,11 @@ struct TicketListCellModel {
 }
 
 struct TicketListCellView: View {
-
+    
     let model: TicketListCellModel
-
+    
     var body: some View {
-
+        
         ZStack {
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 20)
@@ -29,11 +29,11 @@ struct TicketListCellView: View {
                     .foregroundColor(
                         Color(UIColor.secondarySystemGroupedBackground)
                     )
-
+                
                 // если модель приходит то рисовать
                 if let badgeModel = model.badgeModel {
                     BadgeView(model: badgeModel)
-                        .offset(x: 10,
+                        .offset(x: 20,
                                 y: -10)
                 }
             }
@@ -43,7 +43,8 @@ struct TicketListCellView: View {
             }
             .padding(20)
         }
-        .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+        .padding(.horizontal, 20)
+        .padding(.vertical, 2)
         .onTapGesture {
             model.onTap()
         }

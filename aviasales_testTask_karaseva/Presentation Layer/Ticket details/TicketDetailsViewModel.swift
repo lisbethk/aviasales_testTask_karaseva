@@ -8,14 +8,14 @@
 import Foundation
 
 final class TicketDetailsViewModel: ObservableObject {
-
+    
     @Published var model: TicketDetailsModel?
     private let ticketDetailsModelFactory: TicketDetailsModelFactoryProtocol
     private let ticket: Ticket
     private let origin: Origin
     private let destination: Destination
     private let passengersCount: Int
-
+    
     private lazy var showAlert = false {
         didSet {
             model = ticketDetailsModelFactory.ticketDetailsModel(
@@ -29,7 +29,7 @@ final class TicketDetailsViewModel: ObservableObject {
             )
         }
     }
-
+    
     init(ticket: Ticket,
          origin: Origin,
          destination: Destination,
@@ -41,7 +41,7 @@ final class TicketDetailsViewModel: ObservableObject {
         self.destination = destination
         self.passengersCount = passengersCount
         self.ticketDetailsModelFactory = ticketDetailsModelFactory
-
+        
         showAlert = false
     }
 }
