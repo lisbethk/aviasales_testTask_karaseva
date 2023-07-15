@@ -52,6 +52,11 @@
 		749878812A627BE000DC279E /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878802A627BE000DC279E /* ApplicationAssembly.swift */; };
 		749878862A62928C00DC279E /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878852A62928C00DC279E /* RequestMock.swift */; };
 		749878882A62931700DC279E /* ErrorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878872A62931700DC279E /* ErrorMock.swift */; };
+		7498788C2A62B3DE00DC279E /* SearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498788B2A62B3DE00DC279E /* SearchServiceTest.swift */; };
+		749878952A62B7DA00DC279E /* DateFormatterServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878942A62B7DA00DC279E /* DateFormatterServiceMock.swift */; };
+		749878972A62B93600DC279E /* PriceFormatterServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878962A62B93600DC279E /* PriceFormatterServiceMock.swift */; };
+		749878992A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878982A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift */; };
+		7498789D2A62C37A00DC279E /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 7498789C2A62C37A00DC279E /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +126,11 @@
 		749878802A627BE000DC279E /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		749878852A62928C00DC279E /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
 		749878872A62931700DC279E /* ErrorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMock.swift; sourceTree = "<group>"; };
+		7498788B2A62B3DE00DC279E /* SearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceTest.swift; sourceTree = "<group>"; };
+		749878942A62B7DA00DC279E /* DateFormatterServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterServiceMock.swift; sourceTree = "<group>"; };
+		749878962A62B93600DC279E /* PriceFormatterServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterServiceMock.swift; sourceTree = "<group>"; };
+		749878982A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsInfoModelFactoryMock.swift; sourceTree = "<group>"; };
+		7498789C2A62C37A00DC279E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +161,7 @@
 		74450A4E2A5ECACE00683EBF = {
 			isa = PBXGroup;
 			children = (
+				7498789C2A62C37A00DC279E /* Readme.md */,
 				74450A702A5ECAD000683EBF /* aviasales_testTask_karasevaTests */,
 				74450A592A5ECACE00683EBF /* aviasales_testTask_karaseva */,
 				74450A582A5ECACE00683EBF /* Products */,
@@ -182,8 +193,8 @@
 		74450A702A5ECAD000683EBF /* aviasales_testTask_karasevaTests */ = {
 			isa = PBXGroup;
 			children = (
-				7498786A2A6195A600DC279E /* Mocks */,
-				74450A712A5ECAD000683EBF /* RequestProcessorTest.swift */,
+				7498788A2A62B3B300DC279E /* SearchService */,
+				749878892A62B3A400DC279E /* RequestProcessorTest */,
 			);
 			path = aviasales_testTask_karasevaTests;
 			sourceTree = "<group>";
@@ -331,6 +342,34 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		749878892A62B3A400DC279E /* RequestProcessorTest */ = {
+			isa = PBXGroup;
+			children = (
+				7498786A2A6195A600DC279E /* Mocks */,
+				74450A712A5ECAD000683EBF /* RequestProcessorTest.swift */,
+			);
+			path = RequestProcessorTest;
+			sourceTree = "<group>";
+		};
+		7498788A2A62B3B300DC279E /* SearchService */ = {
+			isa = PBXGroup;
+			children = (
+				7498788D2A62B3E000DC279E /* Mocks */,
+				7498788B2A62B3DE00DC279E /* SearchServiceTest.swift */,
+			);
+			path = SearchService;
+			sourceTree = "<group>";
+		};
+		7498788D2A62B3E000DC279E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				749878942A62B7DA00DC279E /* DateFormatterServiceMock.swift */,
+				749878962A62B93600DC279E /* PriceFormatterServiceMock.swift */,
+				749878982A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,6 +483,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7498789D2A62C37A00DC279E /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,11 +545,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7498786E2A6197AA00DC279E /* DataParserMock.swift in Sources */,
+				749878992A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift in Sources */,
+				7498788C2A62B3DE00DC279E /* SearchServiceTest.swift in Sources */,
 				749878862A62928C00DC279E /* RequestMock.swift in Sources */,
 				749878702A6197B400DC279E /* DispatchQueueMock.swift in Sources */,
 				74450A722A5ECAD000683EBF /* RequestProcessorTest.swift in Sources */,
+				749878952A62B7DA00DC279E /* DateFormatterServiceMock.swift in Sources */,
 				749878722A6197BD00DC279E /* HTTPTransportMock.swift in Sources */,
 				7498786C2A61979F00DC279E /* RequestBuilderMock.swift in Sources */,
+				749878972A62B93600DC279E /* PriceFormatterServiceMock.swift in Sources */,
 				749878882A62931700DC279E /* ErrorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
