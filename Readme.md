@@ -1,4 +1,5 @@
 Проект написан на архитектуре MVVM
+Побит на три слоя - core layer, service layer(сервисы) и presentation layer(экраны приложения).
 Навигация в приложении написана на UIKit, UI написан на SwiftUI (навигация у SwiftUI страдает)
 Приложение запускается из MainFlowCoordinator, зависимости лежат в ApplicationAssembly
 UI собирается из моделек, генерируемых фабриками экранов
