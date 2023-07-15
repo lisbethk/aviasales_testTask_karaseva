@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 protocol PriceFormatterServiceProtocol {
-    func getFormattedPrice(price: String, currency: String) -> String
+    func getFormattedPrice(price: String) -> String
 }
 
 final class PriceFormatterService: PriceFormatterServiceProtocol {
-    func getFormattedPrice(price: String, currency: String) -> String {
+    func getFormattedPrice(price: String) -> String {
         
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 0
@@ -31,6 +31,3 @@ final class PriceFormatterService: PriceFormatterServiceProtocol {
         return formattedAmount
     }
 }
-
-
-//        formatter.numberStyle = .currency

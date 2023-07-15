@@ -41,7 +41,7 @@ final class TicketDetailsModelFactory: TicketDetailsModelFactoryProtocol {
         didTapButton: @escaping () -> (),
         didHideAlert: @escaping () -> ()
     ) -> TicketDetailsModel {
-        let price = priceFormatter.getFormattedPrice(price: String(ticket.price.value), currency: ticket.price.currency)
+        let price = priceFormatter.getFormattedPrice(price: String(ticket.price.value))
 
         return TicketDetailsModel(
             buttonModel: .init(

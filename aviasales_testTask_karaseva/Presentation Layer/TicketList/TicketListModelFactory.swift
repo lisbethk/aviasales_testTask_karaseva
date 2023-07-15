@@ -65,7 +65,7 @@ final class TicketListModelFactory: TicketListModelFactoryProtocol {
         tapHandler: @escaping (Ticket) -> ()
     ) -> TicketListCellModel {
 
-        let ticketPrice = priceFormatter.getFormattedPrice(price: String(ticket.price.value), currency: ticket.price.currency)
+        let ticketPrice = priceFormatter.getFormattedPrice(price: String(ticket.price.value))
         let warningTitle = ticket.availableTicketsCount < 11 ? "Осталось \(ticket.availableTicketsCount) билетов по этой цене" : nil
 
         let badgeModel = isFirst ? BadgeModel(text: "Самый дешевый") : nil

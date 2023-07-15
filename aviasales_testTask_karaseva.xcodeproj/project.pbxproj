@@ -56,7 +56,6 @@
 		749878952A62B7DA00DC279E /* DateFormatterServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878942A62B7DA00DC279E /* DateFormatterServiceMock.swift */; };
 		749878972A62B93600DC279E /* PriceFormatterServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878962A62B93600DC279E /* PriceFormatterServiceMock.swift */; };
 		749878992A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749878982A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift */; };
-		7498789D2A62C37A00DC279E /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 7498789C2A62C37A00DC279E /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +129,6 @@
 		749878942A62B7DA00DC279E /* DateFormatterServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterServiceMock.swift; sourceTree = "<group>"; };
 		749878962A62B93600DC279E /* PriceFormatterServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterServiceMock.swift; sourceTree = "<group>"; };
 		749878982A62B98100DC279E /* TicketDetailsInfoModelFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsInfoModelFactoryMock.swift; sourceTree = "<group>"; };
-		7498789C2A62C37A00DC279E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +159,6 @@
 		74450A4E2A5ECACE00683EBF = {
 			isa = PBXGroup;
 			children = (
-				7498789C2A62C37A00DC279E /* Readme.md */,
 				74450A702A5ECAD000683EBF /* aviasales_testTask_karasevaTests */,
 				74450A592A5ECACE00683EBF /* aviasales_testTask_karaseva */,
 				74450A582A5ECACE00683EBF /* Products */,
@@ -483,7 +480,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7498789D2A62C37A00DC279E /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
